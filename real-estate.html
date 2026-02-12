@@ -369,6 +369,100 @@
             border-radius: 100px; margin-bottom: 0.75rem;
         }
 
+        /* CONTENT ENGINE */
+        .content-engine {
+            background: var(--color-warm);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 5rem 2rem;
+        }
+
+        .content-engine-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .content-engine .section-label {
+            font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
+            text-transform: uppercase; color: var(--color-accent); margin-bottom: 1rem;
+        }
+
+        .content-engine h2 {
+            font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.25rem);
+            font-weight: 600; letter-spacing: -0.02em; margin-bottom: 1.25rem; line-height: 1.2;
+        }
+
+        .content-engine p {
+            color: var(--color-text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.25rem;
+        }
+
+        .content-engine-items {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .content-engine-item {
+            background: white; border-radius: 12px; padding: 1.25rem 1.5rem;
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            border: 1px solid var(--color-border);
+        }
+
+        .content-engine-item .check {
+            color: var(--color-accent); font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem;
+        }
+
+        .content-engine-item h4 {
+            font-family: var(--font-display); font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem;
+        }
+
+        .content-engine-item p {
+            font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 0; line-height: 1.5;
+        }
+
+        .content-engine-compare {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .compare-card {
+            border-radius: 12px; padding: 1.5rem; border: 1px solid var(--color-border);
+        }
+
+        .compare-card.before {
+            background: white;
+        }
+
+        .compare-card.after {
+            background: var(--color-accent-light);
+            border-color: var(--color-accent);
+        }
+
+        .compare-card h4 {
+            font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .compare-card ul {
+            list-style: none; padding: 0; margin: 0;
+        }
+
+        .compare-card ul li {
+            font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6;
+            padding: 0.2rem 0;
+        }
+
+        .content-engine-photo {
+            width: 100%; aspect-ratio: 4 / 3; background: var(--color-border);
+            border-radius: 12px; margin-top: 2.5rem; display: flex;
+            align-items: center; justify-content: center;
+            color: var(--color-text-muted); font-size: 0.85rem; font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .content-engine-items { grid-template-columns: 1fr; }
+            .content-engine-compare { grid-template-columns: 1fr; }
+        }
+
         /* DAY 1 SKILLS */
         .day1-section {
             background: var(--color-surface);
@@ -732,6 +826,76 @@
             </div>
         </div>
 
+    </section>
+
+    <!-- CONTENT ENGINE -->
+    <section class="content-engine reveal">
+        <div class="content-engine-inner">
+            <div class="section-label">The content engine</div>
+            <h2>Stop sitting down to "write content." You don't have time for that.</h2>
+            <p>Most agents know they should be posting, blogging, and emailing their list. But after a full day of showings and calls, "create content" keeps getting pushed to next week. Your AI employee changes that.</p>
+            <p>Just text it what's happening — a photo from a showing, a quick market take, a client win. It turns those moments into ready-to-post content across every channel. You never sit down to "write." You just keep doing your job and the content builds itself.</p>
+
+            <p style="font-weight: 600; color: var(--color-text); margin-bottom: 0.75rem;">What it produces from a single text:</p>
+
+            <div class="content-engine-items">
+                <div class="content-engine-item">
+                    <span class="check">✓</span>
+                    <div>
+                        <h4>Facebook group posts</h4>
+                        <p>Neighborhood-specific posts that feel local, not corporate. Built for engagement in the groups where buyers actually hang out.</p>
+                    </div>
+                </div>
+                <div class="content-engine-item">
+                    <span class="check">✓</span>
+                    <div>
+                        <h4>Blog posts</h4>
+                        <p>SEO-friendly articles for your website — market updates, neighborhood guides, tips for buyers and sellers. Published on a schedule you set.</p>
+                    </div>
+                </div>
+                <div class="content-engine-item">
+                    <span class="check">✓</span>
+                    <div>
+                        <h4>Monthly newsletter</h4>
+                        <p>A polished email to your list with market stats, new listings, and your latest content. Assembled automatically, sent when you approve.</p>
+                    </div>
+                </div>
+                <div class="content-engine-item">
+                    <span class="check">✓</span>
+                    <div>
+                        <h4>Thought leadership</h4>
+                        <p>LinkedIn posts, market commentary, and opinion pieces that position you as the go-to agent in your area. Written in your voice.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>Every Friday, your AI employee sends you a single email with the next week's content — posts, blogs, newsletters — ready to review. You approve, tweak, or skip. Takes five minutes. Then it handles the rest.</p>
+
+            <div class="content-engine-compare">
+                <div class="compare-card before">
+                    <h4>Before</h4>
+                    <ul>
+                        <li>— "I'll write something this weekend"</li>
+                        <li>— Last blog post was 4 months ago</li>
+                        <li>— Newsletter list collecting dust</li>
+                        <li>— Social accounts go silent for weeks</li>
+                    </ul>
+                </div>
+                <div class="compare-card after">
+                    <h4>After</h4>
+                    <ul>
+                        <li>✓ 3–4 posts per week, every week</li>
+                        <li>✓ Fresh blog content every month</li>
+                        <li>✓ Newsletter goes out on schedule</li>
+                        <li>✓ You look active, informed, everywhere</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-engine-photo">
+                Agent texting a photo from a showing
+            </div>
+        </div>
     </section>
 
     <!-- DAY 1 SKILLS -->
