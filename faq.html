@@ -316,6 +316,44 @@
             color: white;
         }
 
+        /* SCROLL OFFSET for fixed nav */
+        .faq-category-title[id] {
+            scroll-margin-top: 5rem;
+        }
+
+        /* JUMP NAV */
+        .faq-jump-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            margin-top: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-jump-nav a {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-accent);
+            background: var(--color-surface);
+            border: 1.5px solid var(--color-border);
+            padding: 0.5rem 1.15rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .faq-jump-nav a:hover {
+            background: var(--color-accent);
+            color: white;
+            border-color: var(--color-accent);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(45, 90, 61, 0.15);
+        }
+
         /* FOOTER */
         footer {
             padding: 2rem;
@@ -343,6 +381,15 @@
                 font-size: 0.975rem;
             }
 
+            .faq-jump-nav {
+                gap: 0.5rem;
+            }
+
+            .faq-jump-nav a {
+                font-size: 0.8rem;
+                padding: 0.45rem 1rem;
+            }
+
             .final-links {
                 flex-direction: column;
                 gap: 0.75rem;
@@ -363,6 +410,14 @@
         <h1>Everything you need to know <em>before you hire.</em></h1>
         <p>Real questions from real business owners in the Treasure Valley. If you don't see yours, text us and ask.</p>
         <a href="sms:+12085094809" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--color-accent);text-decoration:none;letter-spacing:-0.02em;">(208) 509-4809 <span style="font-family:var(--font-body);font-size:0.85rem;font-weight:400;color:var(--color-text-muted);">— text anytime</span></a>
+        <div class="faq-jump-nav">
+            <a href="#the-basics">The Basics</a>
+            <a href="#getting-started">Getting Started</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#pricing-maintenance">Pricing & Maintenance</a>
+            <a href="#privacy-security">Privacy & Security</a>
+            <a href="#next-level">Next Level</a>
+        </div>
     </section>
 
     <!-- FAQ BODY -->
@@ -372,7 +427,7 @@
         <div class="faq-category">
             <div class="faq-category-header">
                 <div class="faq-category-number">1</div>
-                <div class="faq-category-title">The basics</div>
+                <div class="faq-category-title" id="the-basics">The basics</div>
             </div>
 
             <div class="faq-item">
@@ -453,7 +508,7 @@
         <div class="faq-category">
             <div class="faq-category-header">
                 <div class="faq-category-number">2</div>
-                <div class="faq-category-title">Setup & getting started</div>
+                <div class="faq-category-title" id="getting-started">Setup & getting started</div>
             </div>
 
             <div class="faq-item">
@@ -534,7 +589,7 @@
         <div class="faq-category">
             <div class="faq-category-header">
                 <div class="faq-category-number">3</div>
-                <div class="faq-category-title">How it works in practice</div>
+                <div class="faq-category-title" id="how-it-works">How it works in practice</div>
             </div>
 
             <div class="faq-item">
@@ -639,7 +694,7 @@
         <div class="faq-category">
             <div class="faq-category-header">
                 <div class="faq-category-number">4</div>
-                <div class="faq-category-title">Pricing & maintenance</div>
+                <div class="faq-category-title" id="pricing-maintenance">Pricing & maintenance</div>
             </div>
 
             <div class="faq-item">
@@ -720,7 +775,7 @@
         <div class="faq-category">
             <div class="faq-category-header">
                 <div class="faq-category-number">5</div>
-                <div class="faq-category-title">Trust, privacy & security</div>
+                <div class="faq-category-title" id="privacy-security">Trust, privacy & security</div>
             </div>
 
             <div class="faq-item">
@@ -789,7 +844,7 @@
         <div class="faq-category">
             <div class="faq-category-header">
                 <div class="faq-category-number">6</div>
-                <div class="faq-category-title">Taking it to the next level</div>
+                <div class="faq-category-title" id="next-level">Taking it to the next level</div>
             </div>
 
             <div class="faq-item">
@@ -873,6 +928,7 @@
             <a href="/faq.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">FAQ</a>
             <a href="/about.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">About</a>
             <a href="/onboarding.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Onboarding</a>
+            <a href="/real-estate.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Real Estate</a>
             <a href="/contact.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Contact</a>
             <a href="/privacy.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Privacy Policy</a>
             <a href="/terms.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Terms & Conditions</a>
