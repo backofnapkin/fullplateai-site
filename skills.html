@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills — Full Plate AI | What Your AI Employee Can Do</title>
+    <meta name="description" content="Your AI employee handles customer service, social media, content marketing, SEO, reporting, and admin. If it can be done on a computer, your AI employee can learn to do it.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FAFAF8;
+            --color-surface: #FFFFFF;
+            --color-text: #1A1A1A;
+            --color-text-muted: #6B6B6B;
+            --color-accent: #2D5A3D;
+            --color-accent-light: #E8F0EB;
+            --color-accent-hover: #1E3F2B;
+            --color-border: #E8E8E4;
+            --color-warm: #F5F0E8;
+            --font-display: 'Fraunces', serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 250, 248, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-cta {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-accent);
+            text-decoration: none;
+            padding: 0.5rem 1.25rem;
+            border: 1.5px solid var(--color-accent);
+            border-radius: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            padding: 8rem 2rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .page-header .hero-tag {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            background: var(--color-accent-light);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: var(--color-text);
+            margin-bottom: 1.25rem;
+        }
+
+        .page-header h1 em {
+            font-style: italic;
+            color: var(--color-accent);
+        }
+
+        .page-header p {
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* SKILL SECTIONS */
+        .skills-body {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
+        }
+
+        .skill-section {
+            margin-bottom: 5rem;
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-icon {
+            font-size: 1.75rem;
+            min-width: 3.25rem;
+            height: 3.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-accent-light);
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .skill-header-text h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--color-text);
+            margin-bottom: 0.35rem;
+        }
+
+        .skill-header-text p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--color-surface);
+            border: 1.5px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .skill-item {
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            border-bottom: 1px solid var(--color-border);
+            border-right: 1px solid var(--color-border);
+        }
+
+        .skill-item:nth-child(2n) {
+            border-right: none;
+        }
+
+        .skill-item:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        .skill-grid.odd-count .skill-item:last-child {
+            grid-column: 1 / -1;
+            border-right: none;
+        }
+
+        .skill-check {
+            color: var(--color-accent);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 0.95rem;
+        }
+
+        .skill-item-text {
+            font-size: 0.925rem;
+            color: var(--color-text);
+            line-height: 1.5;
+        }
+
+        .skill-item-text span {
+            display: block;
+            font-size: 0.825rem;
+            color: var(--color-text-muted);
+            margin-top: 0.2rem;
+            line-height: 1.5;
+        }
+
+        /* CALLOUT BOX */
+        .skill-callout {
+            margin-top: 1.25rem;
+            background: var(--color-warm);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .callout-icon {
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .callout-text {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .callout-text strong {
+            font-weight: 600;
+        }
+
+        /* MAINTENANCE BADGE */
+        .maintenance-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            background: var(--color-accent-light);
+            padding: 0.2rem 0.6rem;
+            border-radius: 100px;
+            margin-top: 0.3rem;
+        }
+
+        /* COMPARISON TABLE */
+        .comparison-section {
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .comparison-section .section-label {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .comparison-section .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .comparison-section .section-sub {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            max-width: 540px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+
+        .comparison-table {
+            max-width: 720px;
+            margin: 0 auto;
+            border: 1.5px solid var(--color-border);
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .comparison-header {
+            display: grid;
+            grid-template-columns: 1fr 160px 160px;
+            background: var(--color-accent);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .comparison-header .col-right {
+            text-align: center;
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1fr 160px 160px;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+            align-items: center;
+            font-size: 0.925rem;
+        }
+
+        .comparison-row:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-row .role-name {
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .comparison-row .typical-cost {
+            text-align: center;
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+        }
+
+        .comparison-row .included {
+            text-align: center;
+            color: var(--color-accent);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .comparison-total {
+            display: grid;
+            grid-template-columns: 1fr 160px 160px;
+            padding: 1.25rem 1.5rem;
+            background: var(--color-accent-light);
+            align-items: center;
+        }
+
+        .comparison-total .role-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--color-text);
+        }
+
+        .comparison-total .typical-cost {
+            text-align: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--color-text);
+        }
+
+        .comparison-total .included {
+            text-align: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--color-accent);
+        }
+
+        /* BUILD YOUR EMPLOYEE SECTION */
+        .build-section {
+            padding: 5rem 2rem;
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .build-section .section-label {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        .build-section .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .build-section p {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
+        }
+
+        .build-section p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .build-examples {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 2.5rem;
+            text-align: left;
+        }
+
+        .build-example {
+            background: var(--color-surface);
+            border: 1.5px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .build-example-quote {
+            font-size: 0.925rem;
+            color: var(--color-text);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .build-example-result {
+            font-size: 0.825rem;
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        /* CTA SECTION */
+        .skills-cta {
+            background: var(--color-accent);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .skills-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .skills-cta p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            background: white;
+            padding: 1rem 2.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        }
+
+        .final-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .final-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .final-links a:hover {
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.75rem 1.25rem;
+            }
+
+            .page-header {
+                padding: 7rem 1.5rem 2rem;
+            }
+
+            .skills-body {
+                padding: 2rem 1.5rem 0;
+            }
+
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-item {
+                border-right: none !important;
+            }
+
+            .skill-item:last-child {
+                border-bottom: none;
+            }
+
+            .comparison-header,
+            .comparison-row,
+            .comparison-total {
+                grid-template-columns: 1fr 110px 110px;
+                padding: 0.85rem 1rem;
+                font-size: 0.825rem;
+            }
+
+            .comparison-header {
+                font-size: 0.7rem;
+            }
+
+            .comparison-total .typical-cost,
+            .comparison-total .included {
+                font-size: 0.95rem;
+            }
+
+            .build-examples {
+                grid-template-columns: 1fr;
+            }
+
+            .final-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-logo">Full Plate <span>AI</span></a>
+        <a href="sms:+12085094809" class="nav-cta">Try a live demo</a>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="hero-tag">What your AI employee can do</div>
+        <h1>One hire. <em>Every role.</em></h1>
+        <p>If it can be done on a computer, your AI employee can learn to do it. The skills below are just the starting point. Monthly maintenance customers work directly with us to build custom workflows for whatever their business needs.</p>
+    </section>
+
+    <!-- SKILLS -->
+    <div class="skills-body">
+
+        <!-- 1. CUSTOMER SERVICE -->
+        <div class="skill-section reveal">
+            <div class="skill-header">
+                <div class="skill-icon">💬</div>
+                <div class="skill-header-text">
+                    <h2>Customer Service</h2>
+                    <p>Your AI employee is the first person your clients talk to — by text or email, any time of day. It answers questions, books meetings, sends confirmations, and follows up so nothing falls through the cracks.</p>
+                </div>
+            </div>
+
+            <div class="skill-grid">
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Answer client questions by text and email
+                        <span>Responds in your brand voice, 24/7</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Schedule meetings and book appointments
+                        <span>Syncs directly with your calendar</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Send confirmation texts and emails
+                        <span>Automatic reminders reduce no-shows</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Qualify incoming leads
+                        <span>Asks the right questions so you only talk to real prospects</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Send welcome packets to new clients
+                        <span>First impressions, handled automatically</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Follow up with leads who go quiet
+                        <span>Persistent without being annoying</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. SOCIAL MEDIA -->
+        <div class="skill-section reveal">
+            <div class="skill-header">
+                <div class="skill-icon">📱</div>
+                <div class="skill-header-text">
+                    <h2>Social Media</h2>
+                    <p>This isn't just about scheduling posts. Your AI employee actively engages in local groups, answers questions, and drives real leads back to your business. Most tools post content. Yours generates revenue.</p>
+                </div>
+            </div>
+
+            <div class="skill-grid">
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Engage in local Facebook groups
+                        <span>Be helpful, answer questions, and drive leads to your business</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Post daily content in your voice
+                        <span>Consistent presence without you touching the apps</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Engage with local businesses online
+                        <span>Build relationships that turn into referrals</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Monitor and respond to comments
+                        <span>You don't have time to watch social media all day — your employee does</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Write and compile newsletters
+                        <span>Text your employee during the month with photos and updates — it builds the newsletter for you</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Track what's working and adjust
+                        <span>Doubles down on content that drives engagement</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-callout">
+                <div class="callout-icon">💡</div>
+                <div class="callout-text">
+                    <strong>From customer service to revenue generator.</strong> One of our moving company customers uses their AI employee to engage in local Facebook groups — answering questions about moving, being genuinely helpful, and naturally driving leads back to their business. One new customer a month from this alone covers the entire cost. This is what happens when your AI employee doesn't just post content — it participates in your community.
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. CONTENT & MARKETING -->
+        <div class="skill-section reveal">
+            <div class="skill-header">
+                <div class="skill-icon">✏️</div>
+                <div class="skill-header-text">
+                    <h2>Content & Marketing</h2>
+                    <p>Blog posts, email campaigns, newsletters, review management — all the marketing work that never gets done because you're too busy running your business. Your AI employee does it consistently, in your voice, without being asked twice.</p>
+                </div>
+            </div>
+
+            <div class="skill-grid odd-count">
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Write and publish blog posts
+                        <span>Optimized for search, written in your voice</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Email marketing campaigns
+                        <span>Drip sequences, announcements, promotions</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Respond to online reviews
+                        <span>Thoughtful replies to Google and Yelp reviews — positive and negative</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Publish on Substack and Medium
+                        <span>Extend your reach beyond your own website</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Competitor research and monitoring
+                        <span>Track what competitors post, price, and promote</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. SEO -->
+        <div class="skill-section reveal">
+            <div class="skill-header">
+                <div class="skill-icon">🔍</div>
+                <div class="skill-header-text">
+                    <h2>SEO</h2>
+                    <p>Your AI employee handles the day-to-day SEO work that keeps you visible in search. Monthly maintenance customers also get hands-on technical SEO from our specialist — audits, fixes, and optimizations implemented directly on your site.</p>
+                </div>
+            </div>
+
+            <div class="skill-grid">
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Google Business Profile management
+                        <span>Keep your listing updated, optimized, and active</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">SEO-optimized blog content
+                        <span>Written to rank for the terms your customers search</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Meta titles and descriptions
+                        <span>Optimized across your site pages</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Online review strategy
+                        <span>Follow up with customers to generate more reviews</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-callout">
+                <div class="callout-icon">🔧</div>
+                <div class="callout-text">
+                    <strong>Monthly maintenance customers get more.</strong> Our SEO specialist personally reviews your site, runs technical audits, identifies issues, and implements fixes directly — with your permission and site access. Title tag optimization, crawl error fixes, site speed improvements, and competitive analysis. This is 15+ years of SEO expertise applied to your business every month, included in your $350/month maintenance.
+                    <div class="maintenance-badge">Included with monthly maintenance</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. REPORTING & INSIGHTS -->
+        <div class="skill-section reveal">
+            <div class="skill-header">
+                <div class="skill-icon">📊</div>
+                <div class="skill-header-text">
+                    <h2>Reporting & Insights</h2>
+                    <p>Your AI employee reports back to you like any team member would. Daily, weekly, or monthly — you get status updates on work completed, where your leads are coming from, and what's moving the needle.</p>
+                </div>
+            </div>
+
+            <div class="skill-grid">
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Daily and weekly status updates
+                        <span>Know exactly what your employee accomplished</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Monthly performance summaries
+                        <span>Trends, wins, and areas to focus on</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Lead source tracking
+                        <span>See where your customers are coming from based on texts and emails</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Data analysis on demand
+                        <span>Ask your employee to evaluate sales data, spot trends, or compare periods</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. ADMIN & OPERATIONS -->
+        <div class="skill-section reveal">
+            <div class="skill-header">
+                <div class="skill-icon">⚙️</div>
+                <div class="skill-header-text">
+                    <h2>Admin & Operations</h2>
+                    <p>The invisible work that keeps a business running — and the first thing that slips when you're busy. Your AI employee handles the admin so you can focus on the work that actually makes you money.</p>
+                </div>
+            </div>
+
+            <div class="skill-grid">
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Email management and organization
+                        <span>Inbox stays clean, nothing gets missed</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Calendar management
+                        <span>Scheduling, rescheduling, conflict resolution</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Document drafting
+                        <span>Proposals, summaries, follow-up notes</span>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-check">✓</span>
+                    <div class="skill-item-text">Research tasks
+                        <span>Market research, vendor comparisons, industry trends</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- COMPARISON TABLE -->
+    <section class="comparison-section reveal">
+        <div class="section-label">The math</div>
+        <div class="section-title">What this would cost you otherwise.</div>
+        <p class="section-sub">Most businesses hire separate people or agencies for each of these roles. You get all of them in one AI employee.</p>
+
+        <div class="comparison-table">
+            <div class="comparison-header">
+                <div>Role</div>
+                <div class="col-right">Typical monthly cost</div>
+                <div class="col-right">Full Plate AI</div>
+            </div>
+
+            <div class="comparison-row">
+                <div class="role-name">Part-time assistant</div>
+                <div class="typical-cost">$1,500–2,500</div>
+                <div class="included">✓ Included</div>
+            </div>
+
+            <div class="comparison-row">
+                <div class="role-name">Social media manager</div>
+                <div class="typical-cost">$750–3,000</div>
+                <div class="included">✓ Included</div>
+            </div>
+
+            <div class="comparison-row">
+                <div class="role-name">SEO agency</div>
+                <div class="typical-cost">$1,000–3,000</div>
+                <div class="included">✓ With maintenance</div>
+            </div>
+
+            <div class="comparison-row">
+                <div class="role-name">Blog / content writer</div>
+                <div class="typical-cost">$500–2,000</div>
+                <div class="included">✓ Included</div>
+            </div>
+
+            <div class="comparison-row">
+                <div class="role-name">Email marketing</div>
+                <div class="typical-cost">$500–1,500</div>
+                <div class="included">✓ Included</div>
+            </div>
+
+            <div class="comparison-total">
+                <div class="role-name">Total</div>
+                <div class="typical-cost">$4,250–12,000/mo</div>
+                <div class="included">$350/mo</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILD YOUR EMPLOYEE -->
+    <section class="build-section reveal">
+        <div class="section-label">Monthly maintenance customers</div>
+        <div class="section-title">Build the employee you need.</div>
+        <p>Your business is unique, and your AI employee should be too. Monthly maintenance customers work directly with us to build custom skills and workflows tailored to their specific business. Need something that's not on this page? Tell us what you need done, and we'll teach your employee how to do it.</p>
+        <p>If it can be done on a computer, your AI employee can learn it. The only thing it can't do is pick up a shovel.</p>
+
+        <div class="build-examples">
+            <div class="build-example">
+                <div class="build-example-quote">"The client sent my AI employee an inquiry at 11pm. By morning, the appointment was already booked."</div>
+                <div class="build-example-result">→ Built in one session</div>
+            </div>
+            <div class="build-example">
+                <div class="build-example-quote">"I send my AI a few photos from job sites during the week. It turns them into a monthly newsletter I'd never have time to write."</div>
+                <div class="build-example-result">→ Built in one session</div>
+            </div>
+            <div class="build-example">
+                <div class="build-example-quote">"I text my AI employee new contacts while I'm out at showings. It handles the follow-up emails so I don't have to think about it."</div>
+                <div class="build-example-result">→ Built in one session</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="skills-cta">
+        <h2>Ready to see what it can do?</h2>
+        <p>Text us to try a live demo, or book a call and we'll walk through how it works for your business.</p>
+        <a href="https://cal.com/fullplateai/30min" class="cta-white" target="_blank">Book a 30-minute call</a>
+        <div class="final-links">
+            <a href="sms:+12085094809">Text (208) 509-4809</a>
+            <a href="mailto:ava@fullplateai.com">ava@fullplateai.com</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Full Plate AI. Boise, Idaho.
+    </footer>
+
+    <script>
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
