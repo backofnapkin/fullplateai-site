@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — Full Plate AI | AI Employees for Boise Small Businesses</title>
+    <meta name="description" content="Common questions about Full Plate AI's dedicated AI employees for small businesses in Boise and the Treasure Valley. Setup, pricing, security, and what to expect.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #FAFAF8;
+            --color-surface: #FFFFFF;
+            --color-text: #1A1A1A;
+            --color-text-muted: #6B6B6B;
+            --color-accent: #2D5A3D;
+            --color-accent-light: #E8F0EB;
+            --color-accent-hover: #1E3F2B;
+            --color-border: #E8E8E4;
+            --color-warm: #F5F0E8;
+            --font-display: 'Fraunces', serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 250, 248, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-cta {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-accent);
+            text-decoration: none;
+            padding: 0.5rem 1.25rem;
+            border: 1.5px solid var(--color-accent);
+            border-radius: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            padding: 8rem 2rem 4rem;
+            max-width: 760px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .page-header .hero-tag {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            background: var(--color-accent-light);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: var(--color-text);
+            margin-bottom: 1.25rem;
+        }
+
+        .page-header h1 em {
+            font-style: italic;
+            color: var(--color-accent);
+        }
+
+        .page-header p {
+            font-size: 1.15rem;
+            color: var(--color-text-muted);
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* FAQ LAYOUT */
+        .faq-body {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .faq-category {
+            margin-bottom: 4rem;
+        }
+
+        .faq-category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .faq-category-number {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            min-width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-accent-light);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .faq-category-title {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--color-text);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.25rem 0;
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: color 0.2s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--color-accent);
+        }
+
+        .faq-icon {
+            font-size: 1.25rem;
+            color: var(--color-accent);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+            font-weight: 300;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 600px;
+        }
+
+        .faq-answer-inner {
+            padding-bottom: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.75;
+        }
+
+        .faq-answer-inner a {
+            color: var(--color-accent);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .faq-answer-inner a:hover {
+            color: var(--color-accent-hover);
+        }
+
+        .faq-answer-inner strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        /* CTA SECTION */
+        .faq-cta {
+            background: var(--color-accent);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .faq-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .faq-cta p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            background: white;
+            padding: 1rem 2.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        }
+
+        .final-links {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .final-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .final-links a:hover {
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0.75rem 1.25rem;
+            }
+
+            .page-header {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            .faq-body {
+                padding: 0 1.5rem 4rem;
+            }
+
+            .faq-question {
+                font-size: 0.975rem;
+            }
+
+            .final-links {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="nav-logo">Full Plate <span>AI</span></a>
+        <a href="sms:+12085094809" class="nav-cta">Try a live demo</a>
+    </nav>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="hero-tag">Frequently asked questions</div>
+        <h1>Everything you need to know <em>before you hire.</em></h1>
+        <p>Real questions from real business owners in the Treasure Valley. If you don't see yours, text us and ask.</p>
+        <a href="sms:+12085094809" style="display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.5rem;font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--color-accent);text-decoration:none;letter-spacing:-0.02em;">(208) 509-4809 <span style="font-family:var(--font-body);font-size:0.85rem;font-weight:400;color:var(--color-text-muted);">— text anytime</span></a>
+    </section>
+
+    <!-- FAQ BODY -->
+    <div class="faq-body">
+
+        <!-- CATEGORY 1: THE BASICS -->
+        <div class="faq-category">
+            <div class="faq-category-header">
+                <div class="faq-category-number">1</div>
+                <div class="faq-category-title">The basics</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What exactly am I getting for under $5,000?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        A dedicated iMac with your AI employee fully installed and configured. It gets its own phone number, its own email address, and a name you choose. We deliver it to your office, set it up, and train it on your business. You own the hardware and everything we build for you. It's yours — not a subscription you're renting.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What does the AI employee actually do day-to-day?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Whatever you'd ask a good assistant to do. It can answer texts from leads, send follow-up emails, write blog posts, draft social media content, schedule meetings, send welcome packets, do competitor research, put together newsletters, and handle the admin work that eats up your day. You give it instructions the same way you would a real employee — by texting or emailing it.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is this just ChatGPT on a computer?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        No. ChatGPT is a tool you type into. This is an employee you communicate with. It has its own phone number, its own email, and it's trained specifically on your business, your brand voice, and how you work. It doesn't wait for you to open a tab — it's working around the clock handling real tasks on its own. Think of it less like software and more like a team member who never clocks out.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Why does it need its own iMac?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Because your AI employee needs a place to live. The iMac is its workstation — just like any employee would have a desk and a computer. It runs completely separate from your other systems, which means it doesn't touch your network, doesn't need your IT team, and if anything ever needs troubleshooting, we handle it remotely. It also means you own everything. No cloud dependency. No platform risk.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What kind of businesses do you work with?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Any business that needs help with the work an employee would do — answering leads, sending emails, creating marketing content, handling follow-ups. We find it works especially well for <strong>real estate agents, med spas, plumbers, moving companies, and higher-ticket service businesses</strong> that interact directly with customers. If your business doesn't need employees or doesn't need marketing, we're probably not the right fit. But if you've got a full plate and need help, that's exactly what we built this for.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CATEGORY 2: SETUP & GETTING STARTED -->
+        <div class="faq-category">
+            <div class="faq-category-header">
+                <div class="faq-category-number">2</div>
+                <div class="faq-category-title">Setup & getting started</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How long does setup take?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        About two weeks from the time you say "go." We build and configure your iMac, train the AI on your business, set up its phone number and email, and deliver it to your office ready to work. Most of that time is us working behind the scenes — you'll spend maybe an hour or two giving us what we need to get it trained right.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do I need to be technical to use this?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Not even a little. If you can send a text message, you can use your AI employee. That's the whole point. You communicate with it the same way you'd talk to a real person on your team — by texting or emailing. We handle all the technical stuff.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What happens during the 60-day ramp-up support?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        The same thing that happens when you onboard a new hire — you fine-tune how they work. During those 60 days, we help you dial in how your AI employee communicates, adjust its workflows, add new capabilities, and make sure it's doing things the way you want. Unlimited support. No extra charge. By the end of it, your AI employee should feel like it's been on your team for months.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I name my AI employee whatever I want?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes. It's your employee. Pick a name that fits your brand. Some clients use first names that match their team's vibe. Others go with something more professional. Whatever feels right for your business.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you deliver and set up in the Treasure Valley?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes — we're based in Boise. For Treasure Valley businesses, we deliver the iMac to your office, set it up, walk you through everything, and make sure it's running before we leave. We also do on-site setups in Salt Lake City, Portland, and yes, even California. If you're somewhere else in the U.S., give us a call or shoot us an email — we'll figure out the best way to get you set up.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CATEGORY 3: HOW IT WORKS IN PRACTICE -->
+        <div class="faq-category">
+            <div class="faq-category-header">
+                <div class="faq-category-number">3</div>
+                <div class="faq-category-title">How it works in practice</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I give it instructions?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Text it or email it. That's it. "Write a blog post about the Boise housing market." "Follow up with the lead from yesterday." "Draft a newsletter for next week." Communicate with it the same way you would with any employee. It reads the message, does the work, and gets back to you.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can it text and email my clients directly?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes. It has its own phone number and its own email address, so it can communicate with your clients directly on your behalf. You decide how much autonomy it gets — most people are skeptical at first, and rightfully so. Just like any new hire, it needs to earn your trust. But after 2–4 weeks, we see most customers handing over more and more responsibility once they see the quality of the work. Some clients end up having it handle everything automatically, others prefer to keep reviewing messages before they go out. Your call.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What if it says something wrong to a customer?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Same thing you'd do with a new employee — you correct it and it learns. During the 60-day ramp-up, we work closely with you to make sure the messaging is dialed in. You can also set it to "review mode" where you approve outgoing messages before they're sent. Over time, as you build trust, most clients give it more and more autonomy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Does it work with my existing email and calendar?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes. It works with Gmail, Outlook, and Google Calendar right out of the box. If you use other tools, let us know during setup and we'll see what we can connect.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I train my AI employee to learn new skills?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Yes — and this is how you take your AI employee to the next level. The more you work with it, the more capable it gets. Want it to start handling a new type of follow-up? Teach it. Want it to write in a different tone for a new campaign? Show it examples. Want it to learn your CRM workflow? Walk it through the steps. It's not a static tool — it grows with your business.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CATEGORY 4: PRICING & MAINTENANCE -->
+        <div class="faq-category">
+            <div class="faq-category-header">
+                <div class="faq-category-number">4</div>
+                <div class="faq-category-title">Pricing & maintenance</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What does the $350/month maintenance cover?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Everything technical — plus the AI costs and your employee's phone number are included. Software updates, AI model upgrades, troubleshooting, performance monitoring, and ongoing optimization of how your AI employee works. We also add new capabilities as they become available. You get a monthly touch point where we review performance together — give us feedback on skills you'd like your employee to learn, refinements in tone, or new tasks you want to hand off. Think of it less like a software subscription and more like having a manager for your AI employee. You never have to think about the technical side — we keep it running and getting better so you can focus on your business.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is the monthly maintenance required?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        No. It's completely optional. You own the hardware and the setup outright. The monthly maintenance just means we keep everything updated, running smooth, and improving over time. If you're comfortable managing the technical side yourself, you don't need it. Most clients find it's worth it so they never have to think about it.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What happens if I cancel the monthly maintenance?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Your AI employee keeps working. You own it. The one ongoing cost you'll keep is the AI service itself — your employee runs on the latest Claude models by Anthropic, which is the best natural language processing available right now. That's a direct cost you'd pay regardless, same as any AI service. What you lose by canceling our maintenance is us handling the updates, troubleshooting, optimization, and monthly check-ins. You can always restart the maintenance later if you change your mind.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Are there any other ongoing costs?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        The AI employee uses AI services to do its work, which have small usage-based costs — similar to a phone bill. We'll walk you through exactly what to expect during setup. There are no hidden fees and no surprise charges from us.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I write this off on my taxes?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        We're not tax professionals, but some of our customers have found that the monthly maintenance fee qualifies as a <strong>Research and Development expense</strong> — which means you may be able to write off 100% of it. Our monthly service is quite literally providing iterative process improvement for your business, which is what the R&D credit was designed for. You can read more about it on the <a href="https://www.irs.gov/businesses/research-credit" target="_blank">IRS website</a>. Consult your tax professional to see if this applies to your situation.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CATEGORY 5: TRUST, PRIVACY & SECURITY -->
+        <div class="faq-category">
+            <div class="faq-category-header">
+                <div class="faq-category-number">5</div>
+                <div class="faq-category-title">Trust, privacy & security</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Who sees my business data?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        You do. The AI employee runs on a dedicated iMac in your office. Your data stays on your machine. We don't store your business information on our servers, and we don't sell it. When we do maintenance work, we access the machine remotely with your permission — same as any IT support would.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Does it connect to my other office computers or network?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        No. It operates completely independently. It needs internet access to work, but it doesn't connect to your internal systems, your file servers, or your other workstations. Think of it as a standalone employee with its own desk and its own computer. It stays in its lane.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I review everything it sends before it goes out?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Absolutely. You set the level of autonomy. Want to approve every email and text before it sends? Done. Want it to handle routine follow-ups on its own but flag anything unusual? That works too. You're the boss — it works the way you want it to.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Will the AI go rogue?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        No. This isn't science fiction. Your AI employee does what it's trained to do and nothing more. It doesn't have goals, ambitions, or a mind of its own. It follows the instructions and workflows you've set up. If it says something you don't like, you correct it — just like you would a real employee. It doesn't get offended, and it doesn't push back. It just gets better.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>I'm not great with technology. Can I really do this?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        If you can text, you can do this. We built it that way on purpose. You don't log into dashboards. You don't configure settings. You don't update software. You just text or email your AI employee, and it does the work. We handle everything else — especially during the first 60 days where we work side by side with you to make sure you're comfortable.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CATEGORY 6: TAKING IT TO THE NEXT LEVEL -->
+        <div class="faq-category">
+            <div class="faq-category-header">
+                <div class="faq-category-number">6</div>
+                <div class="faq-category-title">Taking it to the next level</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I become a first mover in my market?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Right now, almost nobody in the Treasure Valley is using a dedicated AI employee. That's the opportunity. While your competitors are still doing everything manually — writing their own follow-ups, posting their own content, chasing their own leads — you've got someone doing it 24/7. The businesses that adopt this now will have a massive head start in their market. A year from now, everyone will be trying to catch up to where you already are.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I become a social media influencer without the effort?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Your AI employee can write and schedule social media posts in your voice every single day — without you lifting a finger. Give it your opinions, your expertise, your takes on the market, and it turns that into a steady stream of content. Consistency is what builds influence, and most business owners can't stay consistent because they're too busy. Your AI employee never runs out of time.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I add new skills to my AI employee?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Just like you'd train a real employee. Show it examples, give it instructions, and let it practice. Want it to start qualifying leads differently? Tell it the new criteria. Want it to write in a new format? Send it a sample. Want it to handle a process it's never done before? Walk it through the steps once. If you're on the monthly maintenance plan, we can help build out new workflows and capabilities for you.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is this actually worth it for a small business in Boise?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        Think about what a part-time employee costs you. In the Treasure Valley, you're looking at $18–25/hour, plus the time you spend managing them, training them, and covering when they call in sick. Your AI employee costs less than two months of a part-time hire — and it works 24/7, 365 days a year. It doesn't take lunch breaks. It doesn't quit. And it gets better over time, not bored.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What's the catch?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                        There isn't one. You pay under $5,000, you own the hardware, and you get 60 days of support to make sure it's working the way you need. The monthly maintenance is optional. If it's not for you, you still own everything. We're a local Boise company, and our reputation depends on this working for you. That's the whole deal.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CTA -->
+    <section class="faq-cta">
+        <h2>Still have questions?</h2>
+        <p>Text us and ask. Or book a call and we'll walk you through everything.</p>
+        <a href="https://cal.com/fullplateai/30min" class="cta-white" target="_blank">Book a 30-minute call</a>
+        <div class="final-links">
+            <a href="sms:+12085094809">Text (208) 509-4809</a>
+            <a href="mailto:hello@fullplateai.com">hello@fullplateai.com</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Full Plate AI. Boise, Idaho.
+    </footer>
+
+    <script>
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isOpen = item.classList.contains('open');
+
+                // Close all items in the same category
+                item.closest('.faq-category').querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('open');
+                });
+
+                // Toggle clicked item
+                if (!isOpen) {
+                    item.classList.add('open');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
