@@ -70,33 +70,216 @@ body {
   pointer-events: none;
 }
 
-.hero-topbar {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  padding: 24px 48px;
+/* ── SITE NAV ── */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  padding: 0.75rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  background: transparent;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 1px solid transparent;
 }
 
-.hero-logo {
+.site-nav.scrolled {
+  background: rgba(247, 243, 237, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom-color: var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.site-nav .nav-logo {
   font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: -0.5px;
-  opacity: 0.9;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
 }
 
-.hero-badge {
+.site-nav .nav-logo span {
+  color: rgba(255,255,255,0.7);
+  transition: color 0.3s ease;
+}
+
+.site-nav.scrolled .nav-logo {
+  color: var(--text-primary);
+}
+
+.site-nav.scrolled .nav-logo span {
+  color: var(--green);
+}
+
+.site-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.site-nav .nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.site-nav .nav-link:hover {
+  color: white;
+}
+
+.site-nav.scrolled .nav-link {
+  color: var(--text-muted);
+}
+
+.site-nav.scrolled .nav-link:hover {
+  color: var(--text-primary);
+}
+
+.site-nav .nav-badge {
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.2);
-  padding: 6px 16px;
+  padding: 4px 12px;
   border-radius: 100px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
+  color: rgba(255,255,255,0.8);
+  transition: all 0.3s ease;
+}
+
+.site-nav.scrolled .nav-badge {
+  background: rgba(45,90,61,0.08);
+  border-color: rgba(45,90,61,0.15);
+  color: var(--green);
+}
+
+.site-nav .nav-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  padding: 0.45rem 1.15rem;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.site-nav .nav-cta:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.6);
+}
+
+.site-nav.scrolled .nav-cta {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+.site-nav.scrolled .nav-cta:hover {
+  background: var(--green);
+  color: white;
+}
+
+/* HAMBURGER */
+.site-nav .nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+  z-index: 112;
+}
+
+.site-nav .nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.site-nav.scrolled .nav-hamburger span {
+  background: var(--text-primary);
+}
+
+.site-nav .nav-hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.site-nav .nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-nav .nav-hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MOBILE MENU */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--warm-bg);
+  z-index: 105;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-mobile.open {
+  display: flex;
+  opacity: 1;
+}
+
+.nav-mobile a {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.nav-mobile a:hover {
+  color: var(--green);
+}
+
+.nav-mobile .nav-mobile-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: var(--green);
+  padding: 0.75rem 2rem;
+  border-radius: 100px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-mobile .nav-mobile-cta:hover {
+  background: var(--green-dark);
 }
 
 .hero-content {
@@ -708,8 +891,28 @@ body {
 
 /* ── FOOTER ── */
 .footer {
-  padding: 48px 0;
+  padding: 48px 0 32px;
   text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--green);
 }
 
 .footer-logo {
@@ -834,7 +1037,10 @@ body {
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
-  .hero-topbar { padding: 16px 24px; }
+  .site-nav .nav-links { display: none; }
+  .site-nav .nav-badge { display: none; }
+  .site-nav .nav-cta { display: none; }
+  .site-nav .nav-hamburger { display: flex; }
   .hero-content { padding: 100px 24px 60px; }
   .container { padding: 0 20px; }
   .cta-banner { margin: 0 20px; padding: 40px 24px; }
@@ -1176,12 +1382,36 @@ body {
 
 <body>
 
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav class="site-nav" id="siteNav">
+  <a href="index.html" class="nav-logo">Full Plate <span>AI</span></a>
+  <div class="nav-links">
+    <a href="skills.html" class="nav-link">Skills</a>
+    <a href="real-estate.html" class="nav-link">Real Estate</a>
+    <a href="onboarding.html" class="nav-link">Onboarding</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="faq.html" class="nav-link">FAQ</a>
+    <a href="index.html#pricing" class="nav-link">Pricing</a>
+  </div>
+  <span class="nav-badge">February 2026 Edition</span>
+  <a href="sms:+12085094809" class="nav-cta">Text Ava</a>
+  <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="mobileMenu">
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="skills.html" onclick="closeMobileMenu()">Skills</a>
+  <a href="real-estate.html" onclick="closeMobileMenu()">Real Estate</a>
+  <a href="onboarding.html" onclick="closeMobileMenu()">Onboarding</a>
+  <a href="about.html" onclick="closeMobileMenu()">About</a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+  <a href="index.html#pricing" onclick="closeMobileMenu()">Pricing</a>
+  <a href="sms:+12085094809" class="nav-mobile-cta" onclick="closeMobileMenu()">Text Ava</a>
+</div>
+
 <!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
-  <div class="hero-topbar">
-    <div class="hero-logo">Full Plate AI</div>
-    <div class="hero-badge">February 2026 Edition</div>
-  </div>
   <div class="hero-content">
     <div class="hero-eyebrow">Competitive Intelligence Report</div>
     <h1>Treasure Valley<br>Agent <em>Intel</em> Report</h1>
@@ -2810,18 +3040,56 @@ body {
 </section>
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
-<!-- ═══════════════ FOOTER ═══════════════ -->
 <footer class="footer">
   <div class="container">
+    <div class="footer-nav">
+      <a href="/skills.html">Skills</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">About</a>
+      <a href="/onboarding.html">Onboarding</a>
+      <a href="/real-estate.html">Real Estate</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms &amp; Conditions</a>
+    </div>
     <div class="footer-logo">Full Plate AI</div>
     <div class="footer-info">
-      Meridian, Idaho · (208) 509-4809 · ava@fullplateai.com
+      &copy; 2026 Full Plate AI. Boise, Idaho.
     </div>
     <div class="footer-disclaimer">
       <strong>Disclaimer:</strong> Data compiled from publicly available sources including RealTrends Verified, FastExpert, Zillow, Homes.com, Google Business Profiles, Boise Regional Realtors, Feedspot, Facebook Groups, YouTube, Instagram, LinkedIn, Wikipedia, agent websites, local media coverage, and industry publications. Social media follower counts, review numbers, and transaction data reflect information observed at time of research and may fluctuate or contain inaccuracies. Rankings reflect available public data and may not capture all transactions. <strong>We strive for accuracy but cannot guarantee every data point is correct. If you find an error, please email <a href="mailto:ava@fullplateai.com" style="color: var(--green);">ava@fullplateai.com</a> and we will update the report promptly.</strong> This report is for informational purposes only. Report generated February 2026 by Full Plate AI.
     </div>
   </div>
 </footer>
+
+<script>
+// Nav scroll effect
+const siteNav = document.getElementById('siteNav');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 60) {
+    siteNav.classList.add('scrolled');
+  } else {
+    siteNav.classList.remove('scrolled');
+  }
+});
+
+// Mobile menu toggle
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const hamburger = document.querySelector('.nav-hamburger');
+  menu.classList.toggle('open');
+  hamburger.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const hamburger = document.querySelector('.nav-hamburger');
+  menu.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
 
 </body>
 </html>
