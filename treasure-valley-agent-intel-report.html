@@ -38,7 +38,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ââ HERO ââ */
+/* ── HERO ── */
 .hero {
   background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 40%, var(--green-light) 100%);
   color: white;
@@ -204,14 +204,14 @@ body {
   50% { opacity: 0.8; transform: scaleY(1.2); }
 }
 
-/* ââ CONTAINER ââ */
+/* ── CONTAINER ── */
 .container {
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 32px;
 }
 
-/* ââ SECTIONS ââ */
+/* ── SECTIONS ── */
 .section {
   padding: 80px 0;
 }
@@ -246,7 +246,7 @@ body {
   line-height: 1.7;
 }
 
-/* ââ DIVIDER ââ */
+/* ── DIVIDER ── */
 .divider {
   border: none;
   height: 1px;
@@ -254,7 +254,7 @@ body {
   margin: 0;
 }
 
-/* ââ AGENT CARDS ââ */
+/* ── AGENT CARDS ── */
 .agent-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -422,7 +422,7 @@ body {
   background: var(--warm-bg);
 }
 
-/* ââ INSIGHT CARDS ââ */
+/* ── INSIGHT CARDS ── */
 .insight-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -475,7 +475,7 @@ body {
   line-height: 1.7;
 }
 
-/* ââ GAP TABLE ââ */
+/* ── GAP TABLE ── */
 .gap-table {
   width: 100%;
   border-collapse: separate;
@@ -516,7 +516,7 @@ body {
   color: var(--green);
 }
 
-/* ââ DATA SOURCES ââ */
+/* ── DATA SOURCES ── */
 .sources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -558,7 +558,7 @@ body {
 .source-auto.partial { background: rgba(196,151,59,0.12); color: var(--accent-gold); }
 .source-auto.manual { background: rgba(181,74,74,0.1); color: var(--accent-red); }
 
-/* ââ CHANNEL BREAKDOWN ââ */
+/* ── CHANNEL BREAKDOWN ── */
 .channel-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -612,7 +612,7 @@ body {
 .score-mid { background: rgba(196,151,59,0.12); color: var(--accent-gold); }
 .score-low { background: rgba(181,74,74,0.1); color: var(--accent-red); }
 
-/* ââ CTA BANNER ââ */
+/* ── CTA BANNER ── */
 .cta-banner {
   background: linear-gradient(135deg, var(--green-dark), var(--green), var(--green-light));
   border-radius: var(--radius-lg);
@@ -669,7 +669,7 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
-/* ââ FOOTER ââ */
+/* ── FOOTER ── */
 .footer {
   padding: 48px 0;
   text-align: center;
@@ -698,7 +698,7 @@ body {
   line-height: 1.6;
 }
 
-/* ââ BAR CHARTS ââ */
+/* ── BAR CHARTS ── */
 .bar-chart {
   margin-top: 12px;
 }
@@ -741,7 +741,7 @@ body {
   font-size: 13px;
 }
 
-/* ââ TACTICS LIST ââ */
+/* ── TACTICS LIST ── */
 .tactic-list {
   list-style: none;
 }
@@ -794,7 +794,7 @@ body {
   border-radius: 100px;
 }
 
-/* ââ RESPONSIVE ââ */
+/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .hero-topbar { padding: 16px 24px; }
@@ -806,7 +806,7 @@ body {
   .bar-label { font-size: 11px; }
 }
 
-/* ââ TABLE OF CONTENTS ââ */
+/* ── TABLE OF CONTENTS ── */
 .toc {
   background: white;
   border-radius: var(--radius-lg);
@@ -879,7 +879,7 @@ body {
   font-weight: 400;
 }
 
-/* ââ LADDER ââ */
+/* ── LADDER ── */
 .ladder-step {
   display: flex;
   gap: 24px;
@@ -908,7 +908,7 @@ body {
   color: var(--text-muted);
 }
 
-/* ââ DISCLAIMER BAR ââ */
+/* ── DISCLAIMER BAR ── */
 .disclaimer-bar {
   background: rgba(196,151,59,0.08);
   border: 1px solid rgba(196,151,59,0.2);
@@ -933,7 +933,7 @@ body {
 
 <body>
 
-<!-- âââââââââââââââ HERO âââââââââââââââ -->
+<!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
   <div class="hero-topbar">
     <div class="hero-logo">Full Plate AI</div>
@@ -966,7 +966,7 @@ body {
 </section>
 
 
-<!-- âââââââââââââââ TABLE OF CONTENTS âââââââââââââââ -->
+<!-- ═══════════════ TABLE OF CONTENTS ═══════════════ -->
 <div class="toc">
   <div class="container" style="padding: 0;">
     <div class="toc-title">Jump to Section</div>
@@ -1005,14 +1005,14 @@ body {
       </a>
     </div>
     <div class="disclaimer-bar">
-      <span style="font-size: 18px;">â ï¸</span>
+      <span style="font-size: 18px;">⚠️</span>
       <div><strong>Accuracy Note:</strong> We do our best to verify every data point from public sources including RealTrends, FastExpert, Zillow, Google, Feedspot, Facebook, YouTube, and agent websites. However, some details — particularly transaction counts and review numbers — change frequently and may not be 100% accurate at time of reading. <strong>If anything in this report is incorrect, please email <a href="mailto:ava@fullplateai.com" style="color: var(--green);">ava@fullplateai.com</a> and we will update it promptly.</strong></div>
     </div>
   </div>
 </div>
 
 
-<!-- âââââââââââââââ TOP AGENTS âââââââââââââââ -->
+<!-- ═══════════════ TOP AGENTS ═══════════════ -->
 <section class="section" id="agents">
   <div class="container">
     <div class="section-header">
@@ -1030,7 +1030,7 @@ body {
           <div class="agent-avatar"><img src="images/lysi-bishop.png" alt="Lysi Bishop"></div>
           <div>
             <div class="agent-name">Lysi Bishop</div>
-            <div class="agent-company">Keller Williams Realty Boise · <a href="https://lysibishop.com" target="_blank" style="color: var(--green); text-decoration: underline;">lysibishop.com â</a></div>
+            <div class="agent-company">Keller Williams Realty Boise · <a href="https://lysibishop.com" target="_blank" style="color: var(--green); text-decoration: underline;">lysibishop.com ↗</a></div>
             <div class="agent-tags">
               <span class="tag tag-green">#1 Idaho — WSJ</span>
               <span class="tag tag-gold">30+ Years</span>
@@ -1060,19 +1060,19 @@ body {
           <div class="breakdown-title">Marketing & Channel Breakdown</div>
           <div class="breakdown-grid">
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð</div>
+              <div class="breakdown-icon">🌐</div>
               <div><strong>Website:</strong> Custom IDX site with high-end photography. Strong brand identity, elegant design with focus on luxury listings. In-house graphic designer and marketing team.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð±</div>
+              <div class="breakdown-icon">📱</div>
               <div><strong>Social:</strong> Active LinkedIn presence with consistent content about market leadership, Boise community, and real estate philosophy. Uses FB, Instagram, YouTube. Content emphasizes lifestyle and neighborhood expertise.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">â­</div>
+              <div class="breakdown-icon">⭐</div>
               <div><strong>Reviews:</strong> Strong presence on Zillow, Yelp (20+ reviews), and Google. Consistently 5-star. Team members individually reviewed. Testimonials emphasize "gold standard" service.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð </div>
+              <div class="breakdown-icon">🏠</div>
               <div><strong>Specialties:</strong> North Boise dominance for 20+ years, mid-century modern homes, historic properties, luxury foothills estates, Eagle custom builds. In-house staging consultants and photographers.</div>
             </div>
           </div>
@@ -1086,7 +1086,7 @@ body {
           <div class="agent-avatar"><img src="images/matt-bauscher.jpg" alt="Matt Bauscher"></div>
           <div>
             <div class="agent-name">Matt Bauscher</div>
-            <div class="agent-company">Bauscher Real Estate / Amherst Madison · <a href="https://bauscherrealestate.com" target="_blank" style="color: var(--green); text-decoration: underline;">bauscherrealestate.com â</a></div>
+            <div class="agent-company">Bauscher Real Estate / Amherst Madison · <a href="https://bauscherrealestate.com" target="_blank" style="color: var(--green); text-decoration: underline;">bauscherrealestate.com ↗</a></div>
             <div class="agent-tags">
               <span class="tag tag-green">#1 Individual — Idaho</span>
               <span class="tag tag-gold">Ex-Pro Athlete</span>
@@ -1120,27 +1120,27 @@ body {
           </div>
           <div class="breakdown-grid">
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð°</div>
-              <div><strong>PR & Earned Media:</strong> This is where Bauscher separates. His basketball story (BSU guard â 6 years pro in Europe â retired 2014 â #1 agent in Idaho by 2016) generates earned media that no ad spend can replicate. Podcast appearances, keynote speaker at St. Luke's Sports Stars Athletic Awards Night, KIVI TV feature during COVID, WSJ/RealTrends "The Thousand" list. He also co-authored "The Ultimate Guide to Buying and Selling Homes" which hit #1 on Amazon's Real Estate Sales category. He issued press releases through Authority Press Wire for the book launch. This man understands that <strong>every credential creates another media angle</strong>.</div>
+              <div class="breakdown-icon">📰</div>
+              <div><strong>PR & Earned Media:</strong> This is where Bauscher separates. His basketball story (BSU guard → 6 years pro in Europe → retired 2014 → #1 agent in Idaho by 2016) generates earned media that no ad spend can replicate. Podcast appearances, keynote speaker at St. Luke's Sports Stars Athletic Awards Night, KIVI TV feature during COVID, WSJ/RealTrends "The Thousand" list. He also co-authored "The Ultimate Guide to Buying and Selling Homes" which hit #1 on Amazon's Real Estate Sales category. He issued press releases through Authority Press Wire for the book launch. This man understands that <strong>every credential creates another media angle</strong>.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð </div>
+              <div class="breakdown-icon">🏠</div>
               <div><strong>Luxury Positioning:</strong> Bauscher deliberately positions at the luxury tier through Amherst Madison's membership in Luxury Portfolio International (the world's #1 luxury network). His tagline: <em>"Luxury is never a price point, it's an experience."</em> He has a dedicated Luxury Services page, in-house staging company, full-service graphic designer, and marketing team. The brokerage has achieved the highest average sales price in Idaho and over 1,000 million-dollar sales. He's not just selling homes — he's selling a premium brand.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð¤</div>
+              <div class="breakdown-icon">🤝</div>
               <div><strong>Client Community Building:</strong> This is the part most agents miss. Bauscher doesn't just close and move on. He hosts <strong>monthly birthday lunches</strong> for past clients, an <strong>annual Christmas sledding event</strong> at Eagle Island State Park for families, and <strong>date nights for couples</strong>. These events turn past clients into an active community — people who refer not because you asked, but because they genuinely like you. His 91% client-referred rate is the proof.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">â¤ï¸</div>
+              <div class="breakdown-icon">❤️</div>
               <div><strong>Philanthropy as Identity:</strong> Personally serves meals at Boise Rescue Mission with his family. During COVID, he partnered with former BSU teammate Mark Sanchez (co-owner of Growler's Pizza) to deliver food to families and distributed <strong>600+ gift cards to local restaurants</strong> (The Wylder, Chandler's) to keep small businesses alive. He sponsors youth sports. Positions himself on his website as "an active philanthropist in the Boise community." This isn't a marketing tactic — it's a worldview. Same playbook as Christina Ward, different expression. Both prove that at the top, <strong>giving back IS the brand</strong>.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð¥</div>
+              <div class="breakdown-icon">🎥</div>
               <div><strong>Video & Content:</strong> Professional listing videos that showcase homes like mini-films. Active on YouTube, Facebook video, Instagram Reels. The ex-basketball personal brand gives every piece of content a hook that pure agents don't have. Has an in-house graphic designer and marketing team creating assets daily.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð</div>
+              <div class="breakdown-icon">📊</div>
               <div><strong>The Lesson:</strong> Bauscher didn't become #1 by doing one thing well. He became #1 by stacking every tactic on top of each other for 10 years straight — press, video, events, philanthropy, luxury branding, client community, book authorship, sports media crossover — and never stopping. That compounding effect is what separates the top from everyone else.</div>
             </div>
           </div>
@@ -1154,7 +1154,7 @@ body {
           <div class="agent-avatar"><img src="images/templeton.jpg" alt="Dawn & Mark Templeton"></div>
           <div>
             <div class="agent-name">Dawn & Mark Templeton</div>
-            <div class="agent-company">Templeton Real Estate Group · <a href="https://templetonrealestategroup.com" target="_blank" style="color: var(--green); text-decoration: underline;">templetonrealestategroup.com â</a></div>
+            <div class="agent-company">Templeton Real Estate Group · <a href="https://templetonrealestategroup.com" target="_blank" style="color: var(--green); text-decoration: underline;">templetonrealestategroup.com ↗</a></div>
             <div class="agent-tags">
               <span class="tag tag-green">Diamond COE 3 Years</span>
               <span class="tag tag-gold">Free Staging</span>
@@ -1184,19 +1184,19 @@ body {
           <div class="breakdown-title">Marketing & Channel Breakdown</div>
           <div class="breakdown-grid">
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð¨</div>
+              <div class="breakdown-icon">🎨</div>
               <div><strong>Staging Edge:</strong> ASP-certified luxury staging is their #1 differentiator. Free staging for listings. This is a massive conversion lever — sellers see their home transformed and become instant evangelists.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð°</div>
+              <div class="breakdown-icon">📰</div>
               <div><strong>Media:</strong> USA Today, Better Homes & Gardens, local press. Dawn won Real Estate Staging Association Top 100 in 2021. Media appearances drive credibility that feeds the referral flywheel.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð±</div>
+              <div class="breakdown-icon">📱</div>
               <div><strong>Social:</strong> Instagram (~1,600 followers), LinkedIn active, Facebook presence. Posts mix listing photos with team culture and personal motivation. Not viral-level but consistent.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð</div>
+              <div class="breakdown-icon">📍</div>
               <div><strong>Geo-Dominance:</strong> #1 in East Boise resale for 8 consecutive years. #3 individual agent in all of Ada County in 2021. Hyper-local expertise creates an unassailable position in their core market.</div>
             </div>
           </div>
@@ -1210,7 +1210,7 @@ body {
           <div class="agent-avatar">CW</div>
           <div>
             <div class="agent-name">Christina Ward</div>
-            <div class="agent-company">Christina & Company, Keller Williams Realty Boise · <a href="https://christinaandcompany.com" target="_blank" style="color: var(--green); text-decoration: underline;">christinaandcompany.com â</a></div>
+            <div class="agent-company">Christina & Company, Keller Williams Realty Boise · <a href="https://christinaandcompany.com" target="_blank" style="color: var(--green); text-decoration: underline;">christinaandcompany.com ↗</a></div>
             <div class="agent-tags">
               <span class="tag tag-green">Top 3 Individual — Idaho</span>
               <span class="tag tag-gold">86% Referral Rate</span>
@@ -1240,19 +1240,19 @@ body {
           <div class="breakdown-title">Marketing & Channel Breakdown</div>
           <div class="breakdown-grid">
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð¬</div>
+              <div class="breakdown-icon">💬</div>
               <div><strong>Referral Machine:</strong> 86–91% of sales from referrals/repeat. This is the single most impressive number in the valley. Her marketing IS her service — the experience generates the next client. #1 most-reviewed team in Boise.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð</div>
+              <div class="breakdown-icon">🌐</div>
               <div><strong>Website:</strong> Recently redesigned by Bullsai digital marketing. Looks sharp but functions primarily as a credential page, not a lead source. Her 86% referral rate means the website's job is to confirm trust, not create it.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">â¤ï¸</div>
+              <div class="breakdown-icon">❤️</div>
               <div><strong>Philanthropy:</strong> Gives away their 100th commission to nonprofits every year. Makeovers a family's house in need annually. #1 in KW Cares donations for 6 years. This charity angle is a deeply authentic brand differentiator.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð±</div>
+              <div class="breakdown-icon">📱</div>
               <div><strong>Social Gap:</strong> Facebook ~1,400 fans, Instagram ~500 followers, YouTube and LinkedIn present. Given her production volume and review count, her social following is significantly undersized. Massive upside potential.</div>
             </div>
           </div>
@@ -1296,19 +1296,19 @@ body {
           <div class="breakdown-title">Marketing & Channel Breakdown</div>
           <div class="breakdown-grid">
             <div class="breakdown-item">
-              <div class="breakdown-icon">â­</div>
+              <div class="breakdown-icon">⭐</div>
               <div><strong>Review Volume:</strong> 338 verified reviews on FastExpert makes her one of the most-reviewed agents in the entire valley. This volume of social proof creates a significant moat — new agents can't replicate years of accumulated testimonials.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ðª</div>
+              <div class="breakdown-icon">🏪</div>
               <div><strong>RE/MAX Brand:</strong> Leverages the RE/MAX Capital City brand and its 135,000-agent global network. Unlike KW agents who build personal brands, Smith benefits from the brokerage's built-in recognition and referral infrastructure.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð°</div>
+              <div class="breakdown-icon">💰</div>
               <div><strong>Price Segment:</strong> Avg price point around $145K indicates heavy activity in the entry-level and affordable housing segment — a massive volume play that serves first-time buyers and investors. This is a deliberately underserved niche by the luxury-focused top agents.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð</div>
+              <div class="breakdown-icon">📊</div>
               <div><strong>Consistency:</strong> Ranked #1 overall and #2 for sellers on FastExpert's Boise page. Traits flagged by reviewers: Responsive, Professional, Communicative, Knowledgeable. Her consistency across traits is what separates her from flash-in-the-pan producers.</div>
             </div>
           </div>
@@ -1352,19 +1352,19 @@ body {
           <div class="breakdown-title">Marketing & Channel Breakdown</div>
           <div class="breakdown-grid">
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð</div>
+              <div class="breakdown-icon">🏆</div>
               <div><strong>Review King:</strong> 403 reviews is the highest review count of any agent in the Boise market on FastExpert. This is an extraordinary social proof asset — when prospects compare agents, the sheer volume of testimonials creates an insurmountable trust signal.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð</div>
+              <div class="breakdown-icon">🔑</div>
               <div><strong>Buyer Specialist:</strong> #1 buyer's agent in Boise with 136 buyer transactions in 3 years. While most top agents focus on listings (higher commission, more control), Allaway has built a buyer-side empire. This is a contrarian strategy that works because buyer representation demand is constant.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð</div>
+              <div class="breakdown-icon">📍</div>
               <div><strong>Meridian Base:</strong> Based in Meridian through Finding 43 Real Estate, serving the broader Boise metro. Meridian is the fastest-growing city in the valley, and having a home base there positions him for the growth corridor (Star, Kuna, Eagle spillover).</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ð¥</div>
+              <div class="breakdown-icon">🎥</div>
               <div><strong>Video Presence:</strong> FastExpert flags him with a video badge, indicating active video content. At 11 years experience and 403 reviews, he's building the kind of flywheel that compounds — each satisfied buyer becomes a future seller referral.</div>
             </div>
           </div>
@@ -1378,7 +1378,7 @@ body {
           <div class="agent-avatar">TT</div>
           <div>
             <div class="agent-name">Teschia Tucakovic</div>
-            <div class="agent-company">CBH Sales & Marketing (CBH Homes) · <a href="https://cbhhomes.com" target="_blank" style="color: var(--green); text-decoration: underline;">cbhhomes.com â</a></div>
+            <div class="agent-company">CBH Sales & Marketing (CBH Homes) · <a href="https://cbhhomes.com" target="_blank" style="color: var(--green); text-decoration: underline;">cbhhomes.com ↗</a></div>
             <div class="agent-tags">
               <span class="tag tag-green">181 Transactions / Year</span>
               <span class="tag tag-gold">New Construction</span>
@@ -1408,11 +1408,11 @@ body {
           <div class="breakdown-title">Marketing & Channel Breakdown</div>
           <div class="breakdown-grid">
             <div class="breakdown-item">
-              <div class="breakdown-icon">ðï¸</div>
+              <div class="breakdown-icon">🏗️</div>
               <div><strong>Builder Advantage:</strong> Essentially a builder's agent — CBH Homes is Idaho's largest homebuilder. Transaction count is inflated by volume of new construction sales, but the scale is real and the builder pipeline guarantees deal flow.</div>
             </div>
             <div class="breakdown-item">
-              <div class="breakdown-icon">ðï¸</div>
+              <div class="breakdown-icon">🎖️</div>
               <div><strong>Niche:</strong> VA loans and military buyers. This specialization captures a specific, underserved segment with high loyalty. Military relocation is a steady pipeline in the Boise metro area.</div>
             </div>
           </div>
@@ -1458,7 +1458,7 @@ body {
 
 <hr class="divider">
 
-<!-- âââââââââââââââ THE LADDER âââââââââââââââ -->
+<!-- ═══════════════ THE LADDER ═══════════════ -->
 <section class="section" id="ladder">
   <div class="container">
     <div class="section-header">
@@ -1470,7 +1470,7 @@ body {
     <div style="background: var(--warm-cream); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; overflow: hidden;">
       <div class="ladder-step">
         <div class="ladder-level">
-          <div class="ladder-icon">ð±</div>
+          <div class="ladder-icon">🌱</div>
           <div class="ladder-label">Year 1-2</div>
         </div>
         <div>
@@ -1482,7 +1482,7 @@ body {
 
       <div class="ladder-step">
         <div class="ladder-level">
-          <div class="ladder-icon">ð</div>
+          <div class="ladder-icon">📈</div>
           <div class="ladder-label">Year 2-4</div>
         </div>
         <div>
@@ -1494,7 +1494,7 @@ body {
 
       <div class="ladder-step">
         <div class="ladder-level">
-          <div class="ladder-icon">ðï¸</div>
+          <div class="ladder-icon">🏗️</div>
           <div class="ladder-label">Year 4-7</div>
         </div>
         <div>
@@ -1506,7 +1506,7 @@ body {
 
       <div class="ladder-step">
         <div class="ladder-level">
-          <div class="ladder-icon">ð</div>
+          <div class="ladder-icon">👑</div>
           <div class="ladder-label">Year 7+</div>
         </div>
         <div>
@@ -1534,7 +1534,7 @@ body {
 
 <hr class="divider">
 
-<!-- âââââââââââââââ FACEBOOK STRATEGIES âââââââââââââââ -->
+<!-- ═══════════════ FACEBOOK STRATEGIES ═══════════════ -->
 <section class="section" id="facebook">
   <div class="container">
     <div class="section-header">
@@ -1555,7 +1555,7 @@ body {
         <div class="agent-avatar" style="background: linear-gradient(135deg, #C4973B, #E8C06A); color: #1a1a1a;">JT</div>
         <div>
           <div class="agent-name">Case Study: Jane Tromburg's Referral Army</div>
-          <div class="agent-company">Former Elementary School Principal â Boise Real Estate Agent</div>
+          <div class="agent-company">Former Elementary School Principal → Boise Real Estate Agent</div>
           <div class="agent-tags">
             <span class="tag tag-gold">8+ Unprompted Recommendations</span>
             <span class="tag tag-green">CA Transplant</span>
@@ -1567,15 +1567,15 @@ body {
         <div class="breakdown-title">Why She Dominates Facebook Recommendations</div>
         <div class="breakdown-grid">
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð¬</div>
+            <div class="breakdown-icon">💬</div>
             <div><strong>She doesn't promote herself. Others do it for her.</strong> In California-to-Idaho relocation groups, Jane Tromburg received 8+ unprompted recommendations from different people in a single thread. She never posted asking for business. Her past clients volunteered her name — often with specific stories about how she helped them. This is the gold standard.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð¯</div>
+            <div class="breakdown-icon">🎯</div>
             <div><strong>Her background IS her brand.</strong> Former elementary school principal who moved from California to Boise herself. When a family with kids asks for a relocation agent, she's not just an agent — she's someone who <em>understands schools</em> at a professional level. She created a 100-page relocation guide that's become her calling card. Her story is her marketing.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð</div>
+            <div class="breakdown-icon">📖</div>
             <div><strong>Low production, massive pipeline.</strong> By transaction count, she's not a top producer. But she controls one of the most powerful referral networks in the valley. Every person she helps becomes a recruiter. That's a compounding asset no ad spend can buy.</div>
           </div>
         </div>
@@ -1642,7 +1642,7 @@ body {
   </div>
 </section>
 
-<!-- âââââââââââââââ SOCIAL MEDIA POWER PLAYERS âââââââââââââââ -->
+<!-- ═══════════════ SOCIAL MEDIA POWER PLAYERS ═══════════════ -->
 <section class="section" id="social">
   <div class="container">
     <div class="section-header">
@@ -1747,7 +1747,7 @@ body {
     <!-- IMAGE PLACEHOLDER 1 -->
     <div style="background: linear-gradient(135deg, var(--warm-bg-alt), #e0dbd3); border-radius: var(--radius-lg); height: 320px; margin-bottom: 48px; display: flex; align-items: center; justify-content: center; border: 2px dashed var(--border); position: relative; overflow: hidden;">
       <div style="text-align: center; color: var(--text-muted);">
-        <div style="font-size: 48px; margin-bottom: 8px;">ð¸</div>
+        <div style="font-size: 48px; margin-bottom: 8px;">📸</div>
         <div style="font-size: 14px; font-weight: 500;">Image: Boise Skyline or Treasure Valley Aerial</div>
         <div style="font-size: 12px;">Replace with branded photography</div>
       </div>
@@ -1775,15 +1775,15 @@ body {
         <div class="breakdown-title">Why He's Winning</div>
         <div class="breakdown-grid">
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð¬</div>
+            <div class="breakdown-icon">🎬</div>
             <div><strong>Entertainment First, Real Estate Second.</strong> Miller is executing the social media playbook better than anyone in this market, and it's a strategy worth modeling. He doesn't post market updates. He posts cinematic home tours, lifestyle content, "day in the life" stories. His content competes with travel influencers, not other agents. That's why the algorithm rewards him — Instagram doesn't care about mortgage rates, it cares about watch time. He figured out the platform's incentive structure.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð¡</div>
+            <div class="breakdown-icon">💡</div>
             <div><strong>The Differentiator:</strong> "REALTORÂ® + Founder @homefoundboise" — he built a brand name (HomeFound) that works independently of his personal name. If he ever builds a team, the brand scales without him. Most agents brand as their own name, which creates a ceiling. HomeFound is an asset.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">â ï¸</div>
+            <div class="breakdown-icon">⚠️</div>
             <div><strong>Where He Is on the Ladder:</strong> Miller is squarely in the Rung 1-2 growth phase — building awareness and attracting his first wave of clients through social. With 106K followers and 52 Boise sales in 3 years on FastExpert, the question isn't whether his strategy works — it's how quickly the audience converts into the referral engine that defines Rungs 3-4. Is he monetizing through referrals we can't see? Is the audience too broad (national followers who'll never buy in Boise)? The production data shows that at the highest levels, the game shifts from audience-building to relationship-building. Social gets you in the game — reviews, referrals, and community close deals at scale.</div>
           </div>
         </div>
@@ -1808,15 +1808,15 @@ body {
         <div class="breakdown-title">Why They're Worth Studying</div>
         <div class="breakdown-grid">
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð</div>
+            <div class="breakdown-icon">🔗</div>
             <div><strong>Team Amplification Model.</strong> Three accounts (Elliot 19.8K + Carissa 29.2K + Holden 3.5K) all tagging @thgboise. Each person posts their own content style — Elliot does market insights, Carissa does relocation/lifestyle, Holden does new builds. Same brand, three feeds, three algorithms working for one team. This is the playbook for any team that wants social reach without hiring a content agency.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð¬ð§</div>
+            <div class="breakdown-icon">🇬🇧</div>
             <div><strong>The Differentiator:</strong> Elliot is a British expat and Boise State alum. That's a genuinely unusual background for a Boise agent, and he leads with it. "British guy who chose Boise" is a more interesting story than "born and raised Idahoan" in a market flooded with relocation content. Your background IS your brand — he understood that.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð¥</div>
+            <div class="breakdown-icon">📥</div>
             <div><strong>Every member offers a "Free Relocation Guide."</strong> Three team members, three link-in-bio lead magnets, all feeding the same CRM. The math: even at a 1% conversion on 53K followers, that's 530 leads in the funnel. At a 3% close rate on leads, that's 15-16 deals generated purely from social.</div>
           </div>
         </div>
@@ -1826,7 +1826,7 @@ body {
     <!-- IMAGE PLACEHOLDER 2 -->
     <div style="background: linear-gradient(135deg, var(--warm-bg-alt), #e0dbd3); border-radius: var(--radius-lg); height: 280px; margin: 48px 0; display: flex; align-items: center; justify-content: center; border: 2px dashed var(--border); position: relative; overflow: hidden;">
       <div style="text-align: center; color: var(--text-muted);">
-        <div style="font-size: 48px; margin-bottom: 8px;">ð¸</div>
+        <div style="font-size: 48px; margin-bottom: 8px;">📸</div>
         <div style="font-size: 14px; font-weight: 500;">Image: Boise Neighborhood Street Scene or New Construction</div>
         <div style="font-size: 12px;">Replace with branded photography</div>
       </div>
@@ -1850,12 +1850,12 @@ body {
         <div class="breakdown-title">The Rare Hybrid</div>
         <div class="breakdown-grid">
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð</div>
+            <div class="breakdown-icon">🏆</div>
             <div><strong>Production + Social — The Unicorn.</strong> Arrow is the only agent in this market with both legitimate top-producer credentials ($258M sold, Top 50 MLS, RealTrends recognized) AND a meaningful social following (13.7K). Everyone else is one or the other. She's proof the two can coexist — and the combination is a moat nobody else has built yet.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð</div>
-            <div><strong>Bio as Resume.</strong> Her Instagram bio is a masterclass in credential stacking: "$258M Sold | Top 1% Nationwide | Ranked Top 50 MLS | #7 in the NW Region | Recognized by @RealTrendsInc & @TomFerry." Every line is a trust signal. Compare this to the majority of agents whose bios say "Helping families find their dream home ð¡." One converts, the other doesn't. If you have credentials, lead with them — don't bury them in humility.</div>
+            <div class="breakdown-icon">📝</div>
+            <div><strong>Bio as Resume.</strong> Her Instagram bio is a masterclass in credential stacking: "$258M Sold | Top 1% Nationwide | Ranked Top 50 MLS | #7 in the NW Region | Recognized by @RealTrendsInc & @TomFerry." Every line is a trust signal. Compare this to the majority of agents whose bios say "Helping families find their dream home 🏡." One converts, the other doesn't. If you have credentials, lead with them — don't bury them in humility.</div>
           </div>
         </div>
       </div>
@@ -1864,7 +1864,7 @@ body {
     <!-- YOUTUBE PLAYERS -->
     <div class="agent-card" style="border-left: 4px solid var(--green); background: linear-gradient(135deg, var(--warm-cream), var(--warm-bg));">
       <div class="agent-card-top">
-        <div class="agent-avatar" style="background: #FF0000; color: white; font-size: 18px;">â¶</div>
+        <div class="agent-avatar" style="background: #FF0000; color: white; font-size: 18px;">▶</div>
         <div>
           <div class="agent-name">YouTube: The Long Game Nobody's Playing Well</div>
           <div class="agent-company">Brady Fagel · Andy Ellison · Curtis Chism · Joshua Connell</div>
@@ -1874,19 +1874,19 @@ body {
         <div class="breakdown-title">YouTube Landscape — Boise Real Estate</div>
         <div class="breakdown-grid">
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð¯</div>
+            <div class="breakdown-icon">🎯</div>
             <div><strong>Brady Fagel</strong> ("Moving To Boise Idaho," 3.09K subs) owns the biggest single video: <em>"$67 BILLION Is About to Change Boise Forever"</em> at 43K views. His formula: emotional, curiosity-driven titles + genuine local knowledge + 15-25 minute deep dives. He's not the best cinematographer — he wins on research and hooks. That's replicable.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð</div>
+            <div class="breakdown-icon">📚</div>
             <div><strong>Andy & Marcie Ellison</strong> (3.88K subs) took the encyclopedia approach: <em>"What Real Estate Agents Don't Tell You About Living in Idaho"</em> has 25 chapters and 37K views. It's the definitive YouTube guide to Idaho relocation. They also offer a relocation guide download — the YouTube-to-lead-magnet pipeline. This video is essentially a permanent SEO asset that generates leads while they sleep.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ðï¸</div>
+            <div class="breakdown-icon">🏗️</div>
             <div><strong>Curtis Chism</strong> (2.2K subs) is the Facebook-YouTube hybrid — he shows up in Facebook relocation groups AND produces YouTube content. His construction management degree is his differentiator in every interaction. When he evaluates a home on camera, he has credibility other agents don't because he can speak to structural integrity, not just price per square foot. <strong>That's the power of a non-real-estate credential.</strong></div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð</div>
+            <div class="breakdown-icon">📊</div>
             <div><strong>The numbers are still tiny.</strong> The biggest Boise RE YouTube channel has 4.96K subscribers. For context, a mid-tier Dallas or Phoenix real estate YouTuber has 50-200K. The Boise YouTube market is where Boise Instagram was 3 years ago — early, uncrowded, and about to compound. The first agent to consistently post quality Boise content weekly for 12 months will own this channel.</div>
           </div>
         </div>
@@ -1906,19 +1906,19 @@ body {
         <div class="breakdown-title">What We Found Monitoring Relocation Groups</div>
         <div class="breakdown-grid">
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð</div>
+            <div class="breakdown-icon">👑</div>
             <div><strong>Jane Tromburg won a referral thread without posting.</strong> In a single "looking for an agent" post in the California to Idaho group, Tromburg was recommended by 8+ separate people unprompted. She's a former elementary school principal who leads with her California transplant story and offers a 100-page relocation guide. Her production numbers are modest — but her referral army is stronger than any ad budget.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð¥</div>
+            <div class="breakdown-icon">👥</div>
             <div><strong>Naseem Eissa & Juliet Marin Bell</strong> received 9+ mentions in the same thread — the most of anyone. Their dual-name pairing has become a brand ("Naseem and Juliet"). Every recommender types both names. The partnership format creates built-in memorability that solo agents can't match.</div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð </div>
+            <div class="breakdown-icon">🏠</div>
             <div><strong>Wendy LePire controls the funnel.</strong> She admin's "Moving to Boise for Families" (2.6K members). Her actual sales? 3 closings in 5 years per Homes.com. She's a marketing and PR professional (former CEO of 23 Kazoos, Amazon bestselling author) who built a Facebook group as a lead generation machine. She may be converting leads via referral fees rather than direct sales. The takeaway: <strong>you don't need to be a top producer to control the top of the funnel.</strong></div>
           </div>
           <div class="breakdown-item">
-            <div class="breakdown-icon">ð±</div>
+            <div class="breakdown-icon">📱</div>
             <div><strong>The scale of Boise Facebook is enormous.</strong> We identified 100+ active local groups. "Moving To Idaho" has 17K members. "Boise With Kids" has 24K posting 30+ times/day. "Treasure Valley Crime & Community" has 126K. The Latino community runs 6+ groups with 8K-31K members each posting 60-90+ times daily. No single agent is systematically present in more than 2-3 groups. The first agent monitoring and engaging across 10-15 groups simultaneously has a structural advantage that's impossible to replicate manually.</div>
           </div>
         </div>
@@ -1928,7 +1928,7 @@ body {
     <!-- IMAGE PLACEHOLDER 3 -->
     <div style="background: linear-gradient(135deg, var(--warm-bg-alt), #e0dbd3); border-radius: var(--radius-lg); height: 280px; margin: 48px 0; display: flex; align-items: center; justify-content: center; border: 2px dashed var(--border); position: relative; overflow: hidden;">
       <div style="text-align: center; color: var(--text-muted);">
-        <div style="font-size: 48px; margin-bottom: 8px;">ð¸</div>
+        <div style="font-size: 48px; margin-bottom: 8px;">📸</div>
         <div style="font-size: 14px; font-weight: 500;">Image: Treasure Valley Subdivision Aerial or Agent at Open House</div>
         <div style="font-size: 12px;">Replace with branded photography</div>
       </div>
@@ -1941,7 +1941,7 @@ body {
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; margin-bottom: 48px;">
       <!-- Differentiator: Using It -->
       <div style="background: white; border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-md); border-top: 4px solid var(--green);">
-        <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green); margin-bottom: 16px;">â Using Their Story</div>
+        <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--green); margin-bottom: 16px;">✅ Using Their Story</div>
         <div style="margin-bottom: 20px;">
           <div style="font-weight: 700; margin-bottom: 4px;">Christina Ward — Philanthropy as Identity</div>
           <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">Gives away her 100th commission to nonprofits every year. Makeovers a family's house in need annually. #1 in KW Cares donations for 6 consecutive years. This isn't a marketing tactic — it's her identity. And it generates an 86% referral rate. People don't refer you because you're good at selling houses. They refer you because you're good AND you mean something.</p>
@@ -1962,7 +1962,7 @@ body {
 
       <!-- Differentiator: NOT Using It -->
       <div style="background: white; border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-md); border-top: 4px solid var(--accent-red);">
-        <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-red); margin-bottom: 16px;">â Stories Going Untold</div>
+        <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-red); margin-bottom: 16px;">❌ Stories Going Untold</div>
         <div style="margin-bottom: 20px;">
           <div style="font-weight: 700; margin-bottom: 4px;">Military Veterans Selling Real Estate</div>
           <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">Multiple agents in this market are veterans (Jon Eisfelder is "retired military vet and prior law enforcement"). Mountain Home AFB is 45 minutes from Boise. Military families are a massive relocation segment with VA loan needs. Yet no veteran agent has built a brand around "I served, now I serve you." The "Military Families Moving to Treasure Valley" Facebook group doesn't even exist yet. That's an entire identity-based brand sitting unclaimed.</p>
@@ -1985,24 +1985,24 @@ body {
     <!-- WHAT'S DYING -->
     <div id="dying"></div>
     <div style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); color: white; border-radius: var(--radius-lg); padding: 48px; margin-bottom: 48px;">
-      <div style="font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; margin-bottom: 8px;">â¡ What's Dying in 2026</div>
+      <div style="font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; margin-bottom: 8px;">⚡ What's Dying in 2026</div>
       <p style="color: rgba(255,255,255,0.6); margin-bottom: 32px;">These tactics worked 2-3 years ago. They're now either oversaturated, algorithmically deprioritized, or both. If you're still investing time here, redirect it.</p>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
         <div style="background: rgba(255,255,255,0.05); border-radius: var(--radius); padding: 24px; border: 1px solid rgba(255,255,255,0.08);">
-          <div style="font-size: 13px; font-weight: 700; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">â ï¸ Monthly Market Update Videos</div>
+          <div style="font-size: 13px; font-weight: 700; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">☠️ Monthly Market Update Videos</div>
           <p style="font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6;">Compare: Brady Fagel's "$67 Billion" emotional hook = <strong>43,000 views</strong>. Treasure Valley Dave's "January 2026 Market Update" = <strong>22 views</strong>. Same topic, same market, 2000x difference. The algorithm buries chart-and-stat videos because watch time is low. People click away after 90 seconds of median price data. The educational market update was valuable when one agent did it. Now everyone does. It's commodity content.</p>
         </div>
         <div style="background: rgba(255,255,255,0.05); border-radius: var(--radius); padding: 24px; border: 1px solid rgba(255,255,255,0.08);">
-          <div style="font-size: 13px; font-weight: 700; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">â ï¸ Generic Relocation Guides</div>
+          <div style="font-size: 13px; font-weight: 700; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">☠️ Generic Relocation Guides</div>
           <p style="font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6;">Count how many agents on the Feedspot influencer list offer a "FREE Relocation Guide": at least 10 out of 32. When everyone has one, it stops being a differentiator and becomes table stakes. What works now: <strong>hyper-specific guides</strong> (Katie Yocham's "Moving to Eagle" guide targets one city, not the whole valley), <strong>interactive tools</strong> (neighborhood comparison calculators), or <strong>personalized reports</strong> generated for a specific buyer's situation. Static PDFs are the new business card — expected but not exciting.</p>
         </div>
         <div style="background: rgba(255,255,255,0.05); border-radius: var(--radius); padding: 24px; border: 1px solid rgba(255,255,255,0.08);">
-          <div style="font-size: 13px; font-weight: 700; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">â ï¸ Followers Without Conversion</div>
+          <div style="font-size: 13px; font-weight: 700; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">☠️ Followers Without Conversion</div>
           <p style="font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6;">Several agents on the influencer list have 20-50K followers with no evidence of top production. Laurel Hamblin has 51K followers and "125+ families served" — likely career total, not annual. Morey Allaway has near-zero social following but 403 reviews and 176 transactions in 3 years. <strong>Reviews close deals. Followers don't.</strong> Social media without a conversion system (text capture, CRM, follow-up automation) is an expensive hobby.</p>
         </div>
         <div style="background: rgba(255,255,255,0.05); border-radius: var(--radius); padding: 24px; border: 1px solid rgba(255,255,255,0.08);">
-          <div style="font-size: 13px; font-weight: 700; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">â ï¸ Solo Content Grinding</div>
+          <div style="font-size: 13px; font-weight: 700; color: var(--accent-red); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px;">☠️ Solo Content Grinding</div>
           <p style="font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.6;">Every nano-influencer (1-5K followers) on the Feedspot list is doing it all themselves: filming, editing, writing captions, responding to comments, DMing leads. The burnout rate is enormous. Most will stop posting consistently within 6-12 months. The ones who survive either hire a content team (expensive — $3-5K/month) or get an AI employee that handles research, drafts, scheduling, and follow-up. Manual content creation at the pace the algorithm demands is not sustainable for a solo agent who also needs to, you know, sell houses.</p>
         </div>
       </div>
@@ -2010,7 +2010,7 @@ body {
 
     <!-- WHAT'S NEXT -->
     <div style="background: white; border-radius: var(--radius-lg); padding: 48px; box-shadow: var(--shadow-md); border-left: 4px solid var(--green);">
-      <div style="font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; color: var(--green); margin-bottom: 8px;">ð® What Replaces It</div>
+      <div style="font-family: 'Fraunces', serif; font-size: 24px; font-weight: 700; color: var(--green); margin-bottom: 8px;">🔮 What Replaces It</div>
       <p style="color: var(--text-secondary); margin-bottom: 24px;">The agents who win from here aren't the ones who post more. They're the ones who build <strong>systems</strong> that compound.</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
         <div style="padding: 20px; background: var(--warm-cream); border-radius: var(--radius);">
@@ -2033,7 +2033,7 @@ body {
 
 <hr class="divider">
 <hr class="divider">
-<!-- âââââââââââââââ TACTICS THAT WORK âââââââââââââââ -->
+<!-- ═══════════════ TACTICS THAT WORK ═══════════════ -->
 <section class="section" id="tactics">
   <div class="container">
     <div class="section-header">
@@ -2121,7 +2121,7 @@ body {
 
 <hr class="divider">
 <hr class="divider">
-<!-- âââââââââââââââ HIDDEN CHANNELS âââââââââââââââ -->
+<!-- ═══════════════ HIDDEN CHANNELS ═══════════════ -->
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -2132,7 +2132,7 @@ body {
     <div class="insight-grid">
       <div class="insight-card green">
         <h3 class="insight-title">Boise Regional Realtors Production Awards</h3>
-        <p class="insight-text">The Circle of Excellence awards (Bronze â Diamond) are public social proof that most agents never leverage in their marketing. Top agents plaster these across their sites. The awards application deadline is February 15 — most agents don't even apply. Free credibility, widely ignored.</p>
+        <p class="insight-text">The Circle of Excellence awards (Bronze → Diamond) are public social proof that most agents never leverage in their marketing. Top agents plaster these across their sites. The awards application deadline is February 15 — most agents don't even apply. Free credibility, widely ignored.</p>
       </div>
       <div class="insight-card gold">
         <h3 class="insight-title">Idaho Business Review Awards & Coverage</h3>
@@ -2160,7 +2160,7 @@ body {
 
 <hr class="divider">
 <hr class="divider">
-<!-- âââââââââââââââ GAPS & OPPORTUNITIES âââââââââââââââ -->
+<!-- ═══════════════ GAPS & OPPORTUNITIES ═══════════════ -->
 <section class="section" id="gaps">
   <div class="container">
     <div class="section-header">
@@ -2225,7 +2225,7 @@ body {
 
 <hr class="divider">
 <hr class="divider">
-<!-- âââââââââââââââ ASSOCIATIONS & COMMUNITIES âââââââââââââââ -->
+<!-- ═══════════════ ASSOCIATIONS & COMMUNITIES ═══════════════ -->
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -2265,7 +2265,7 @@ body {
 
 <hr class="divider">
 <hr class="divider">
-<!-- âââââââââââââââ MARKET SNAPSHOT âââââââââââââââ -->
+<!-- ═══════════════ MARKET SNAPSHOT ═══════════════ -->
 <section class="section" id="appendix">
   <div class="container">
     <div class="section-header">
@@ -2300,7 +2300,7 @@ body {
 
 <hr class="divider">
 <hr class="divider">
-<!-- âââââââââââââââ DATA SOURCES âââââââââââââââ -->
+<!-- ═══════════════ DATA SOURCES ═══════════════ -->
 <section class="section">
   <div class="container">
     <div class="section-header">
@@ -2332,7 +2332,7 @@ body {
       </div>
       <div class="source-card">
         <h4>BRR Circle of Excellence</h4>
-        <p>Annual production award tiers (Bronze â Diamond) with dollar thresholds. Published by Boise Regional Realtors. Requires manual monitoring of award announcements.</p>
+        <p>Annual production award tiers (Bronze → Diamond) with dollar thresholds. Published by Boise Regional Realtors. Requires manual monitoring of award announcements.</p>
         <span class="source-auto partial">Semi-Automatable</span>
       </div>
       <div class="source-card">
@@ -2356,7 +2356,7 @@ body {
 
 <hr class="divider">
 <hr class="divider">
-<!-- âââââââââââââââ CTA âââââââââââââââ -->
+<!-- ═══════════════ CTA ═══════════════ -->
 <section class="section" style="padding-bottom: 0;">
   <div class="cta-banner">
     <h2>This Report Took 40+ Hours.<br>Your AI Employee Generates It Monthly.</h2>
@@ -2365,8 +2365,8 @@ body {
   </div>
 </section>
 
-<!-- âââââââââââââââ FOOTER âââââââââââââââ -->
-<!-- âââââââââââââââ FOOTER âââââââââââââââ -->
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<!-- ═══════════════ FOOTER ═══════════════ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-logo">Full Plate AI</div>
