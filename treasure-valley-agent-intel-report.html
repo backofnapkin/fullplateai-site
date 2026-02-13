@@ -1135,14 +1135,79 @@ body {
 
 .intro-pitch {
   margin-top: 48px;
+  background: linear-gradient(135deg, rgba(45,90,61,0.04), rgba(45,90,61,0.01));
+  border-radius: var(--radius-lg);
+  padding: 44px 48px;
+  border: 1px solid rgba(45,90,61,0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-pitch::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--green), var(--green-light));
+  border-radius: 4px 0 0 4px;
 }
 
 .intro-pitch h3 {
   font-family: 'Fraunces', serif;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  line-height: 1.3;
+}
+
+.intro-pitch-lead {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.intro-pitch-highlight {
+  background: white;
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 24px 0;
+  border: 1px solid var(--border);
+  font-size: 16px;
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  font-family: 'Fraunces', serif;
+}
+
+.intro-pitch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin: 28px 0;
+}
+
+.intro-pitch-card {
+  background: white;
+  border-radius: var(--radius);
+  padding: 20px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.intro-pitch-card-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.intro-pitch-card-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .intro-pitch p {
@@ -1154,6 +1219,15 @@ body {
 
 .intro-pitch p:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .intro-pitch {
+    padding: 32px 24px;
+  }
+  .intro-pitch-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .intro-cta-card {
@@ -1465,10 +1539,27 @@ body {
     <!-- AI Employee Pitch -->
     <div class="intro-pitch">
       <h3>What If You Had an Employee Like Ava?</h3>
-      <p>Imagine having an employee who responds to your leads via text and email within seconds, 24/7. Who participates in local Facebook groups and answers questions on your behalf. Who manages your follow-up pipeline so no lead ever goes cold. Who handles the admin, the marketing, the client communication — while you focus on showings, negotiations, and closing deals.</p>
-      <p>That's not a future concept. That's what Ava does right now.</p>
+      <p class="intro-pitch-lead">Imagine having an employee who responds to your leads via text and email within seconds, 24/7. Who participates in local Facebook groups and answers questions on your behalf. Who manages your follow-up pipeline so no lead ever goes cold. Who handles the admin, the marketing, the client communication — while you focus on showings, negotiations, and closing deals.</p>
+
+      <div class="intro-pitch-highlight">That's not a future concept. That's what Ava does right now.</div>
+
+      <div class="intro-pitch-grid">
+        <div class="intro-pitch-card">
+          <div class="intro-pitch-card-icon">💬</div>
+          <div class="intro-pitch-card-text">No one in the Treasure Valley is using an AI employee to manage and engage with local Facebook groups.</div>
+        </div>
+        <div class="intro-pitch-card">
+          <div class="intro-pitch-card-icon">🔄</div>
+          <div class="intro-pitch-card-text">No one is using AI to automate their referral pipeline so no lead ever goes cold.</div>
+        </div>
+        <div class="intro-pitch-card">
+          <div class="intro-pitch-card-icon">📊</div>
+          <div class="intro-pitch-card-text">No one is using AI to generate personalized neighborhood reports for every lead.</div>
+        </div>
+      </div>
+
       <p>The next 2–3 years belong to the first movers. The agents who figure out AI aren't going to have a slight advantage — they're going to have an unfair one. While everyone else is burning out trying to be everywhere at once, you'll have an employee who never sleeps, never forgets a follow-up, and never has a bad day.</p>
-      <p>No one in the Treasure Valley is using an AI employee to manage and engage with local Facebook groups. No one is using AI to automate their referral pipeline. No one is using AI to generate personalized neighborhood reports for every lead. The first agents who do this will build a compounding advantage that grows every single month.</p>
+      <p><strong>The first agents who do this will build a compounding advantage that grows every single month.</strong></p>
     </div>
 
     <!-- CTA Card -->
