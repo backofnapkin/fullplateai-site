@@ -686,6 +686,252 @@
             transform: translateY(0);
         }
 
+        /* ORG CHART */
+        .org-chart {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem;
+        }
+
+        .org-top-card {
+            max-width: 320px;
+            margin: 0 auto;
+            background: var(--color-surface);
+            border: 1.5px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .org-top-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(45, 90, 61, 0.08);
+        }
+
+        .org-top-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--color-accent-light);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .org-top-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--color-text);
+        }
+
+        .org-top-sub {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+        }
+
+        .org-status {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.25rem;
+        }
+
+        .org-status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(45, 90, 61, 0.4); }
+            50% { opacity: 0.8; box-shadow: 0 0 0 4px rgba(45, 90, 61, 0); }
+        }
+
+        .org-status-text {
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+        }
+
+        /* CONNECTOR LINES */
+        .org-connectors {
+            position: relative;
+            height: 48px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .org-connector-vert {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 1.5px;
+            height: 24px;
+            background: var(--color-border);
+            transform: translateX(-50%);
+        }
+
+        .org-connector-horiz {
+            position: absolute;
+            top: 24px;
+            left: calc(12.5% + 10px);
+            right: calc(12.5% + 10px);
+            height: 1.5px;
+            background: var(--color-border);
+        }
+
+        .org-connector-drop {
+            position: absolute;
+            top: 24px;
+            width: 1.5px;
+            height: 24px;
+            background: var(--color-border);
+        }
+
+        .org-connector-drop:nth-child(3) { left: calc(12.5% + 10px); }
+        .org-connector-drop:nth-child(4) { left: calc(37.5% + 3.33px); }
+        .org-connector-drop:nth-child(5) { right: calc(37.5% + 3.33px); }
+        .org-connector-drop:nth-child(6) { right: calc(12.5% + 10px); }
+
+        /* DEPARTMENT CARDS */
+        .org-dept-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .dept-card {
+            background: var(--color-surface);
+            border: 1.5px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.25rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .dept-card:hover {
+            border-color: var(--color-accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(45, 90, 61, 0.08);
+        }
+
+        .dept-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--color-accent-light);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .dept-name {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--color-text);
+            margin-bottom: 0.15rem;
+        }
+
+        .dept-sub {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .dept-tasks {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            flex: 1;
+        }
+
+        .dept-tasks li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--color-text);
+            line-height: 1.45;
+            padding: 0.2rem 0;
+        }
+
+        .dept-tasks li .dept-check {
+            color: var(--color-accent);
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+            margin-top: 1px;
+        }
+
+        .active-task {
+            margin-top: auto;
+            padding-top: 0.75rem;
+        }
+
+        .active-task-inner {
+            background: var(--color-warm);
+            border-radius: 8px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0 0.6rem;
+            overflow: hidden;
+        }
+
+        .task-spinner {
+            width: 14px;
+            height: 14px;
+            border: 2px solid var(--color-accent-light);
+            border-top-color: var(--color-accent);
+            border-radius: 50%;
+            animation: taskSpin 0.8s linear infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes taskSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        .task-text {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            flex: 1;
+            min-width: 0;
+            transition: opacity 0.4s ease;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 768px) {
 
@@ -747,6 +993,31 @@
                 display: flex;
             }
 
+            .org-chart {
+                padding: 0 1.5rem 2rem;
+            }
+
+            .org-connectors {
+                display: none;
+            }
+
+            .org-dept-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+            }
+
+            .dept-name {
+                font-size: 0.85rem;
+            }
+
+            .dept-tasks li {
+                font-size: 0.75rem;
+            }
+
+            .task-text {
+                font-size: 0.65rem;
+            }
+
             footer > div {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr;
@@ -754,6 +1025,14 @@
                 text-align: center;
                 max-width: 320px;
                 margin: 0 auto 1rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .org-dept-grid {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+                margin: 0 auto;
             }
         }
     </style>
@@ -799,6 +1078,116 @@
         <h1>One hire. <em>Every role.</em></h1>
         <p>If it can be done on a computer, your AI employee can learn to do it. The skills below are just the starting point. Monthly maintenance customers work directly with us to build custom workflows for whatever their business needs.</p>
     </section>
+
+    <!-- ORG CHART -->
+    <div class="org-chart reveal">
+
+        <!-- Top Card -->
+        <div class="org-top-card">
+            <div class="org-top-icon">🖥️</div>
+            <div class="org-top-title">Your AI Employee</div>
+            <div class="org-top-sub">Full Plate AI — iMac</div>
+            <div class="org-status">
+                <div class="org-status-dot"></div>
+                <div class="org-status-text">Online · All systems running</div>
+            </div>
+        </div>
+
+        <!-- Connector Lines -->
+        <div class="org-connectors">
+            <div class="org-connector-vert"></div>
+            <div class="org-connector-horiz"></div>
+            <div class="org-connector-drop"></div>
+            <div class="org-connector-drop"></div>
+            <div class="org-connector-drop"></div>
+            <div class="org-connector-drop"></div>
+        </div>
+
+        <!-- Department Cards -->
+        <div class="org-dept-grid">
+
+            <!-- Content Manager -->
+            <div class="dept-card">
+                <div class="dept-icon">✏️</div>
+                <div class="dept-name">Content Manager</div>
+                <div class="dept-sub">Marketing & Content</div>
+                <ul class="dept-tasks">
+                    <li><span class="dept-check">✓</span> Blog posts & SEO content</li>
+                    <li><span class="dept-check">✓</span> Monthly newsletters</li>
+                    <li><span class="dept-check">✓</span> Social media posts</li>
+                    <li><span class="dept-check">✓</span> Email campaigns</li>
+                    <li><span class="dept-check">✓</span> Review responses</li>
+                </ul>
+                <div class="active-task" data-tasks='["Drafting March newsletter...","Writing blog post on summer tips...","Scheduling 3 social posts...","Responding to Google review..."]'>
+                    <div class="active-task-inner">
+                        <div class="task-spinner"></div>
+                        <span class="task-text">Drafting March newsletter...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Service -->
+            <div class="dept-card">
+                <div class="dept-icon">💬</div>
+                <div class="dept-name">Customer Service</div>
+                <div class="dept-sub">Client Communication</div>
+                <ul class="dept-tasks">
+                    <li><span class="dept-check">✓</span> Answer texts & emails 24/7</li>
+                    <li><span class="dept-check">✓</span> Book appointments</li>
+                    <li><span class="dept-check">✓</span> Qualify incoming leads</li>
+                    <li><span class="dept-check">✓</span> Send welcome packets</li>
+                    <li><span class="dept-check">✓</span> Follow up with cold leads</li>
+                </ul>
+                <div class="active-task" data-tasks='["Responding to client inquiry...","Sending booking confirmation...","Qualifying new lead from website...","Following up with James Williams..."]'>
+                    <div class="active-task-inner">
+                        <div class="task-spinner"></div>
+                        <span class="task-text">Responding to client inquiry...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEO & Web -->
+            <div class="dept-card">
+                <div class="dept-icon">🔍</div>
+                <div class="dept-name">SEO & Web</div>
+                <div class="dept-sub">Search & Online Presence</div>
+                <ul class="dept-tasks">
+                    <li><span class="dept-check">✓</span> Google Business Profile</li>
+                    <li><span class="dept-check">✓</span> SEO-optimized pages</li>
+                    <li><span class="dept-check">✓</span> Meta titles & descriptions</li>
+                    <li><span class="dept-check">✓</span> Competitor monitoring</li>
+                    <li><span class="dept-check">✓</span> Review generation</li>
+                </ul>
+                <div class="active-task" data-tasks='["Updating Google Business Profile...","Optimizing meta descriptions...","Monitoring competitor pricing...","Requesting review from recent client..."]'>
+                    <div class="active-task-inner">
+                        <div class="task-spinner"></div>
+                        <span class="task-text">Updating Google Business Profile...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin & Assistant -->
+            <div class="dept-card">
+                <div class="dept-icon">⚙️</div>
+                <div class="dept-name">Admin & Assistant</div>
+                <div class="dept-sub">Operations & Scheduling</div>
+                <ul class="dept-tasks">
+                    <li><span class="dept-check">✓</span> Calendar management</li>
+                    <li><span class="dept-check">✓</span> Email organization</li>
+                    <li><span class="dept-check">✓</span> Document drafting</li>
+                    <li><span class="dept-check">✓</span> Accounts receivable</li>
+                    <li><span class="dept-check">✓</span> Research & reporting</li>
+                </ul>
+                <div class="active-task" data-tasks='["Sending payment reminder...","Rescheduling Tuesday meeting...","Drafting client proposal...","Organizing inbox — 12 sorted..."]'>
+                    <div class="active-task-inner">
+                        <div class="task-spinner"></div>
+                        <span class="task-text">Sending payment reminder...</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <!-- SKILLS -->
     <div class="skills-body">
@@ -1270,6 +1659,24 @@
             hamburger.classList.remove('open');
             document.body.style.overflow = '';
         }
+
+        // Rotating tasks in org chart
+        document.querySelectorAll('.active-task').forEach((taskEl, cardIndex) => {
+            const tasks = JSON.parse(taskEl.dataset.tasks);
+            const textEl = taskEl.querySelector('.task-text');
+            let currentIndex = 0;
+
+            setTimeout(() => {
+                setInterval(() => {
+                    textEl.style.opacity = '0';
+                    setTimeout(() => {
+                        currentIndex = (currentIndex + 1) % tasks.length;
+                        textEl.textContent = tasks[currentIndex];
+                        textEl.style.opacity = '1';
+                    }, 400);
+                }, 3500);
+            }, cardIndex * 900);
+        });
     </script>
 
 </body>
