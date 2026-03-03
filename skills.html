@@ -790,8 +790,8 @@
         .org-connector-horiz {
             position: absolute;
             top: 24px;
-            left: calc(12.5% + 10px);
-            right: calc(12.5% + 10px);
+            left: 12.5%;
+            right: 12.5%;
             height: 1.5px;
             background: var(--color-border);
         }
@@ -802,12 +802,13 @@
             width: 1.5px;
             height: 24px;
             background: var(--color-border);
+            transform: translateX(-50%);
         }
 
-        .org-connector-drop:nth-child(3) { left: calc(12.5% + 10px); }
-        .org-connector-drop:nth-child(4) { left: calc(37.5% + 3.33px); }
-        .org-connector-drop:nth-child(5) { right: calc(37.5% + 3.33px); }
-        .org-connector-drop:nth-child(6) { right: calc(12.5% + 10px); }
+        .org-connector-drop:nth-child(3) { left: 12.5%; }
+        .org-connector-drop:nth-child(4) { left: 37.5%; }
+        .org-connector-drop:nth-child(5) { left: 62.5%; }
+        .org-connector-drop:nth-child(6) { left: 87.5%; }
 
         /* DEPARTMENT CARDS */
         .org-dept-grid {
@@ -893,6 +894,8 @@
         .active-task {
             margin-top: auto;
             padding-top: 0.75rem;
+            width: 100%;
+            align-self: stretch;
         }
 
         .active-task-inner {
