@@ -623,6 +623,165 @@
             color: var(--color-text-muted); border-top: 1px solid var(--color-border);
         }
 
+        /* PHONE DEMO */
+        .phone-demo {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .phone-demo-text h2 {
+            font-family: var(--font-display); font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 600; line-height: 1.15; letter-spacing: -0.03em;
+            color: var(--color-text); margin-bottom: 1.25rem;
+        }
+        .phone-demo-text h2 em { font-style: italic; color: var(--color-accent); }
+
+        .phone-demo-text p {
+            font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.75; max-width: 420px;
+        }
+
+        .phone-demo-device {
+            display: flex; flex-direction: column; align-items: center;
+        }
+
+        .iphone-frame {
+            width: 375px; max-width: 100%; height: 680px;
+            background: #000; border-radius: 44px;
+            padding: 12px; display: flex; flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.08);
+            position: relative; overflow: hidden;
+        }
+
+        .iphone-screen {
+            flex: 1; background: #fff; border-radius: 34px;
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+
+        .iphone-status-bar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 24px 0; font-size: 0.8rem; font-weight: 600;
+            color: #1A1A1A; flex-shrink: 0;
+        }
+        .iphone-status-bar .status-icons { display: flex; gap: 5px; align-items: center; }
+        .iphone-status-bar .status-icons svg { width: 16px; height: 16px; }
+
+        .iphone-header {
+            display: flex; align-items: center; gap: 10px;
+            padding: 10px 16px 10px; border-bottom: 1px solid #E8E8E4;
+            flex-shrink: 0;
+        }
+
+        .iphone-avatar {
+            width: 34px; height: 34px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-accent), #4a9e6a);
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.02em;
+        }
+
+        .iphone-header span {
+            font-size: 0.95rem; font-weight: 600; color: #1A1A1A;
+        }
+
+        .iphone-chat {
+            flex: 1; overflow-y: auto; padding: 12px 14px 16px;
+            display: flex; flex-direction: column; gap: 6px;
+            scroll-behavior: smooth;
+        }
+        .iphone-chat::-webkit-scrollbar { width: 0; }
+
+        .chat-msg {
+            max-width: 82%; padding: 9px 14px; border-radius: 18px;
+            font-size: 0.9rem; line-height: 1.45; word-wrap: break-word;
+            animation: msgFadeIn 0.3s ease both;
+        }
+
+        .chat-msg.sent {
+            align-self: flex-end; background: var(--color-accent);
+            color: #fff; border-bottom-right-radius: 6px;
+        }
+
+        .chat-msg.received {
+            align-self: flex-start; background: #E8E8E4;
+            color: #1A1A1A; border-bottom-left-radius: 6px;
+        }
+
+        .chat-msg.quoted {
+            align-self: flex-start; background: #f4f4f2;
+            color: #1A1A1A; border-bottom-left-radius: 6px;
+            border-left: 3px solid var(--color-accent);
+            font-style: italic; font-size: 0.85rem;
+        }
+
+        .chat-time-skip {
+            align-self: center; font-size: 0.75rem; color: #8E8E93;
+            padding: 8px 0; animation: msgFadeIn 0.3s ease both;
+        }
+
+        .typing-indicator {
+            align-self: flex-start; background: #E8E8E4;
+            padding: 10px 16px; border-radius: 18px; border-bottom-left-radius: 6px;
+            display: flex; gap: 4px; align-items: center;
+        }
+        .typing-indicator.sent-typing {
+            align-self: flex-end; background: var(--color-accent);
+            border-bottom-left-radius: 18px; border-bottom-right-radius: 6px;
+        }
+
+        .typing-dot {
+            width: 7px; height: 7px; border-radius: 50%; background: #8E8E93;
+            animation: typingBounce 1.2s infinite;
+        }
+        .typing-indicator.sent-typing .typing-dot { background: rgba(255,255,255,0.7); }
+        .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+            30% { transform: translateY(-4px); opacity: 1; }
+        }
+
+        @keyframes msgFadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chat-fade-out {
+            animation: chatFadeOut 0.4s ease forwards;
+        }
+        @keyframes chatFadeOut {
+            to { opacity: 0; transform: translateY(-10px); }
+        }
+
+        .scenario-indicator {
+            display: flex; align-items: center; gap: 12px;
+            margin-top: 16px; font-size: 0.8rem; color: var(--color-text-muted);
+        }
+
+        .scenario-dots {
+            display: flex; gap: 6px;
+        }
+
+        .scenario-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--color-border); transition: background 0.3s ease;
+        }
+        .scenario-dot.active { background: var(--color-accent); }
+
+        .scenario-label {
+            font-family: var(--font-body); font-size: 0.8rem; color: var(--color-text-muted);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .chat-msg, .chat-time-skip { animation: none; }
+            .typing-dot { animation: none; opacity: 0.6; }
+            .chat-fade-out { animation: none; }
+        }
+
         /* ANIMATIONS */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
         .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -639,6 +798,10 @@
             .day1-grid { grid-template-columns: 1fr; }
             .ooo-examples { grid-template-columns: 1fr; }
             .final-links { flex-direction: column; gap: 0.75rem; }
+
+            .phone-demo { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.5rem; text-align: center; }
+            .phone-demo-text p { margin: 0 auto; }
+            .iphone-frame { width: 100%; max-width: 375px; height: 620px; }
 
             .nav-links {
                 display: none;
@@ -714,6 +877,35 @@
         </div>
         <div class="re-hero-photo">
             <img src="images/boise-state-capital-building.jpg" alt="Boise State Capitol building in the Treasure Valley">
+        </div>
+    </section>
+
+    <!-- AI EMPLOYEE DEMO -->
+    <section class="phone-demo reveal">
+        <div class="phone-demo-text">
+            <div class="hero-tag">See it in action</div>
+            <h2>Your AI employee is a <em>text away.</em></h2>
+            <p>Delegate tasks, manage clients, and stay organized — all from your phone. Watch real scenarios play out in real time.</p>
+        </div>
+        <div class="phone-demo-device">
+            <div class="iphone-frame">
+                <div class="iphone-screen">
+                    <div class="iphone-status-bar">
+                        <span>9:41</span>
+                        <span class="status-icons">
+                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M1 12.5l3-8 3 8M2.2 10h3.6"/><path d="M11.5 3v10M9 5.5l2.5-2.5L14 5.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <svg viewBox="0 0 16 16" fill="currentColor"><rect x="1" y="5" width="3" height="8" rx="0.5" opacity="0.3"/><rect x="5" y="3.5" width="3" height="9.5" rx="0.5" opacity="0.6"/><rect x="9" y="2" width="3" height="11" rx="0.5" opacity="0.85"/><rect x="13" y="0.5" width="3" height="12.5" rx="0.5"/></svg>
+                            <svg viewBox="0 0 28 14" fill="currentColor"><rect x="0.5" y="0.5" width="23" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1"/><rect x="2" y="2" width="17" height="10" rx="1.5" fill="#2D5A3D"/><rect x="25" y="4" width="2.5" height="6" rx="1"/></svg>
+                        </span>
+                    </div>
+                    <div class="iphone-header">
+                        <div class="iphone-avatar">AI</div>
+                        <span>My AI Employee</span>
+                    </div>
+                    <div class="iphone-chat" id="iphoneChat"></div>
+                </div>
+            </div>
+            <div class="scenario-indicator" id="scenarioIndicator"></div>
         </div>
     </section>
 
@@ -1033,6 +1225,208 @@
             hamburger.classList.remove('open');
             document.body.style.overflow = '';
         }
+
+        // ── Phone Demo: Scenario Data ──
+        const demoScenarios = [
+            {
+                title: "New Client Outreach",
+                messages: [
+                    { sender: "user", text: "Hey — just met a new prospect at the open house. James Williams, (512) 555-0184. Add him to my contacts and CRM." },
+                    { sender: "ai", text: "Done. James Williams is added to your contacts and CRM. Tagged as a new lead from today's open house at 1847 Oakwood Dr." },
+                    { sender: "ai", text: "Want me to reach out to him?" },
+                    { sender: "user", text: "Yes — send him a text introducing yourself as my assistant. Thank him for stopping by and ask when he's free this week." },
+                    { sender: "ai", text: "Sent. Here's what I texted him:" },
+                    { sender: "ai", text: "\"Hi James, this is the assistant for Sarah at Pinnacle Realty. Sarah would love to connect — here's a link to grab a time that works for you: calendly.com/sarah-pinnacle\"", type: "quoted" },
+                    { sender: "user", text: "Perfect. Let me know when he responds." },
+                    { type: "time-skip", text: "35 minutes later" },
+                    { sender: "ai", text: "James booked a meeting for Thursday at 10am. James is pre-approved for a loan up to $800K and interested in a 3–4 bedroom house in the Eagle area with land." },
+                    { sender: "user", text: "Thanks." },
+                    { sender: "ai", text: "All set. Calendar invite sent to both of you. Thursday at 10am. I'll email a reminder in your Thursday morning briefing." }
+                ]
+            },
+            {
+                title: "Newsletter & Content",
+                messages: [
+                    { sender: "user", text: "Just forwarded you 3 photos from last weekend's open house and one of me with the Ramirez family — they just closed on their first home! \ud83c\udfe1" },
+                    { sender: "ai", text: "Got them — all 4 photos received. The Ramirez closing photo is great, congrats to them! Want me to use these for anything specific?" },
+                    { sender: "user", text: "Yes — these are for the monthly newsletter. Use the open house shots and the closing photo. Make the Ramirez story the highlight." },
+                    { sender: "ai", text: "Perfect. I'll feature the Ramirez first-home story as the lead with their photo, and use the open house shots in the listings section. The newsletter draft will be ready on the 15th — I'll email it to you for approval before anything goes out." },
+                    { sender: "user", text: "Thanks. Also make sure to include a section on where interest rates are heading over the next 2–3 months. People keep asking me about that." },
+                    { sender: "ai", text: "Noted. I'll add a market outlook section covering projected rate changes through Q2, with sources." }
+                ]
+            },
+            {
+                title: "Scheduling & Calendar",
+                messages: [
+                    { sender: "user", text: "I need to reschedule my 2pm with David Torres to sometime next week. And block off Friday afternoon — I'm taking my kids to the lake." },
+                    { sender: "ai", text: "Checking your calendar... David has availability Monday 11am, Tuesday 3pm, or Wednesday 1pm next week. Which works best?" },
+                    { sender: "user", text: "Tuesday 3pm" },
+                    { sender: "ai", text: "Done. Moved David Torres to Tuesday at 3pm. Sent him an updated invite with a note: \"Rescheduled to Tuesday — looking forward to it.\"" },
+                    { sender: "ai", text: "Also blocked Friday 12pm–6pm as personal time. Your Friday is now clear after noon. Enjoy the lake! \ud83c\udfa3" },
+                    { sender: "user", text: "Thanks. One more — remind me Wednesday morning to prep for the David meeting." },
+                    { sender: "ai", text: "Reminder set for Wednesday 8:30am: \"Prep for David Torres meeting at 3pm.\" I'll ping you. \u2713" }
+                ]
+            },
+            {
+                title: "Follow-Up & Nurture",
+                messages: [
+                    { sender: "user", text: "It's been a week since the open house. Can you follow up with everyone who signed in but I haven't contacted yet?" },
+                    { sender: "ai", text: "Checking the sign-in sheet against your CRM... 4 people signed in that you haven't reached out to yet:\n— Lisa Park\n— Marcus Johnson\n— Tanya & Ray Hoffman\n— Deshawn Williams" },
+                    { sender: "ai", text: "Want me to send each of them a personalized follow-up?" },
+                    { sender: "user", text: "Yes — mention the property address and ask if they have any questions or want to see similar listings." },
+                    { sender: "ai", text: "All 4 follow-ups sent. Each message mentions 1847 Oakwood Dr and invites them to reach out. I'll let you know if anyone replies." },
+                    { type: "time-skip", text: "2 hours later" },
+                    { sender: "ai", text: "Marcus Johnson replied — he's interested in similar 3-bed homes in the Oakwood area under $450K. Want me to pull some listings and send them over to him?" },
+                    { sender: "user", text: "Yes, send him the top 3 matches." },
+                    { sender: "ai", text: "Done. Sent Marcus 3 active listings in Oakwood: 2104 Birch Ln ($425K), 987 Cedar Park Dr ($439K), and 1330 Oakwood Ct ($419K). Included photos and your contact info. \u2713" }
+                ]
+            }
+        ];
+
+        // ── Phone Demo: Playback Engine ──
+        (function() {
+            var chatEl = document.getElementById('iphoneChat');
+            var indicatorEl = document.getElementById('scenarioIndicator');
+            if (!chatEl || !indicatorEl) return;
+
+            var timeouts = [];
+            var currentScenario = 0;
+            var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            function clearTimeouts() {
+                timeouts.forEach(function(t) { clearTimeout(t); });
+                timeouts = [];
+            }
+
+            function renderIndicator(index) {
+                var dots = '';
+                for (var i = 0; i < demoScenarios.length; i++) {
+                    dots += '<div class="scenario-dot' + (i === index ? ' active' : '') + '"></div>';
+                }
+                indicatorEl.innerHTML =
+                    '<div class="scenario-dots">' + dots + '</div>' +
+                    '<span class="scenario-label">' + (index + 1) + ' of ' + demoScenarios.length + ': ' + demoScenarios[index].title + '</span>';
+            }
+
+            function scrollChat() {
+                chatEl.scrollTop = chatEl.scrollHeight;
+            }
+
+            function addTypingIndicator(sender) {
+                var div = document.createElement('div');
+                div.className = 'typing-indicator' + (sender === 'user' ? ' sent-typing' : '');
+                div.id = 'typingBubble';
+                div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+                chatEl.appendChild(div);
+                scrollChat();
+            }
+
+            function removeTyping() {
+                var el = document.getElementById('typingBubble');
+                if (el) el.remove();
+            }
+
+            function addMessage(msg) {
+                removeTyping();
+                var div = document.createElement('div');
+                if (msg.type === 'time-skip') {
+                    div.className = 'chat-time-skip';
+                    div.textContent = msg.text;
+                } else {
+                    var cls = msg.sender === 'user' ? 'sent' : 'received';
+                    if (msg.type === 'quoted') cls = 'quoted';
+                    div.className = 'chat-msg ' + cls;
+                    div.textContent = msg.text;
+                }
+                chatEl.appendChild(div);
+                scrollChat();
+            }
+
+            function getTypingDelay(msg) {
+                if (msg.type === 'time-skip') return 0;
+                var len = msg.text.length;
+                var base = msg.sender === 'user' ? 600 : 900;
+                var perChar = msg.sender === 'user' ? 8 : 10;
+                var delay = base + Math.min(len * perChar, 2200);
+                return delay + (Math.random() * 400 - 200);
+            }
+
+            function getPauseBetween() {
+                return 800 + Math.random() * 500;
+            }
+
+            function playScenario(index) {
+                clearTimeouts();
+                chatEl.innerHTML = '';
+                currentScenario = index;
+                renderIndicator(index);
+
+                var messages = demoScenarios[index].messages;
+                var cumulativeDelay = 600;
+
+                if (reducedMotion) {
+                    messages.forEach(function(msg) { addMessage(msg); });
+                    var t = setTimeout(function() { nextScenario(); }, 8000);
+                    timeouts.push(t);
+                    return;
+                }
+
+                messages.forEach(function(msg, i) {
+                    var typingDelay = getTypingDelay(msg);
+
+                    // Show typing indicator
+                    if (msg.type !== 'time-skip') {
+                        (function(m, d) {
+                            var t1 = setTimeout(function() {
+                                addTypingIndicator(m.sender);
+                            }, d);
+                            timeouts.push(t1);
+                        })(msg, cumulativeDelay);
+                        cumulativeDelay += typingDelay;
+                    }
+
+                    // Show actual message
+                    (function(m, d) {
+                        var t2 = setTimeout(function() {
+                            addMessage(m);
+                        }, d);
+                        timeouts.push(t2);
+                    })(msg, cumulativeDelay);
+
+                    cumulativeDelay += getPauseBetween();
+                });
+
+                // After last message: fade out and go to next
+                var t3 = setTimeout(function() {
+                    var allMsgs = chatEl.querySelectorAll('.chat-msg, .chat-time-skip');
+                    allMsgs.forEach(function(el) { el.classList.add('chat-fade-out'); });
+                }, cumulativeDelay + 2500);
+                timeouts.push(t3);
+
+                var t4 = setTimeout(function() {
+                    nextScenario();
+                }, cumulativeDelay + 3200);
+                timeouts.push(t4);
+            }
+
+            function nextScenario() {
+                var next = (currentScenario + 1) % demoScenarios.length;
+                playScenario(next);
+            }
+
+            // Start when section is in view
+            var demoSection = document.querySelector('.phone-demo');
+            var started = false;
+            var demoObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting && !started) {
+                        started = true;
+                        playScenario(0);
+                    }
+                });
+            }, { threshold: 0.2 });
+            demoObserver.observe(demoSection);
+        })();
     </script>
 
 </body>
