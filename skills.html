@@ -813,7 +813,7 @@
         /* DEPARTMENT CARDS */
         .org-dept-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 1rem;
             max-width: 720px;
             margin: 0 auto;
@@ -830,6 +830,8 @@
             text-align: center;
             transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
             cursor: default;
+            min-width: 0;
+            overflow: hidden;
         }
 
         .dept-card:hover {
