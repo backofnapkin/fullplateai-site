@@ -217,33 +217,12 @@
             background: var(--color-accent-hover);
         }
 
-        /* HERO */
-        .re-hero {
-            padding: 3rem 2rem 5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .re-hero-text .hero-tag {
+        /* HERO TAG */
+        .hero-tag {
             font-family: var(--font-body); font-size: 0.8rem; font-weight: 500;
             letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-accent);
             background: var(--color-accent-light); padding: 0.4rem 1rem;
             border-radius: 100px; display: inline-block; margin-bottom: 1.5rem;
-        }
-
-        .re-hero-text h1 {
-            font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.75rem);
-            font-weight: 600; line-height: 1.15; letter-spacing: -0.03em;
-            color: var(--color-text); margin-bottom: 1.25rem;
-        }
-        .re-hero-text h1 em { font-style: italic; color: var(--color-accent); }
-
-        .re-hero-text p {
-            font-size: 1.05rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.5rem;
         }
 
         .hero-cta {
@@ -254,16 +233,6 @@
             box-shadow: 0 4px 24px rgba(45, 90, 61, 0.2);
         }
         .hero-cta:hover { background: var(--color-accent-hover); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(45, 90, 61, 0.25); }
-
-        .re-hero-photo {
-            width: 100%; aspect-ratio: 4 / 3;
-            background: var(--color-warm); border: 1.5px solid var(--color-border);
-            border-radius: 16px; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; gap: 0.75rem; overflow: hidden;
-        }
-        .re-hero-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
-        .photo-placeholder-icon { font-size: 2rem; opacity: 0.4; }
-        .photo-placeholder-text { font-size: 0.85rem; color: var(--color-text-muted); text-align: center; }
 
         /* FIRST MOVER SECTION */
         .first-mover {
@@ -630,8 +599,24 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-rows: auto 1fr;
+            gap: 0 4rem;
+            align-items: start;
+        }
+
+        .phone-demo-text {
+            grid-column: 1; grid-row: 1;
+            padding-top: 2rem;
+        }
+
+        .phone-demo-device {
+            grid-column: 2; grid-row: 1 / 3;
+            align-self: center;
+        }
+
+        .phone-demo-cta {
+            grid-column: 1; grid-row: 2;
+            margin-top: 2rem;
         }
 
         .phone-demo-text h2 {
@@ -789,8 +774,6 @@
         /* RESPONSIVE */
         @media (max-width: 768px) {
 
-            .re-hero { grid-template-columns: 1fr; padding: 2rem 1.5rem 3rem; gap: 2.5rem; }
-            .re-hero-photo { order: -1; }
             .use-case { grid-template-columns: 1fr; gap: 2rem; }
             .use-case:nth-child(even) .use-case-photo { order: 0; }
             .use-case-photo { order: -1 !important; }
@@ -799,8 +782,13 @@
             .ooo-examples { grid-template-columns: 1fr; }
             .final-links { flex-direction: column; gap: 0.75rem; }
 
-            .phone-demo { grid-template-columns: 1fr; gap: 2.5rem; padding: 7rem 1.5rem 3rem; text-align: center; }
+            .phone-demo { grid-template-columns: 1fr; grid-template-rows: auto; gap: 2rem; padding: 7rem 1.5rem 3rem; text-align: center; }
+            .phone-demo-text { grid-column: 1; grid-row: 1; padding-top: 0; }
             .phone-demo-text p { margin: 0 auto; }
+            .phone-demo-device { grid-column: 1; grid-row: 2; align-self: center; }
+            .phone-demo-cta { grid-column: 1; grid-row: 3; margin-top: 0; }
+            .phone-demo-cta p { margin-left: auto; margin-right: auto; }
+            .phone-demo-cta > div { align-items: center; }
             .iphone-frame { width: 100%; max-width: 375px; height: 620px; }
 
             .nav-links {
@@ -861,7 +849,7 @@
         <a href="/text-us.html" class="nav-mobile-cta" onclick="closeMobileMenu()">Text Ava</a>
     </div>
 
-    <!-- AI EMPLOYEE DEMO -->
+    <!-- HERO: PHONE DEMO + CTA -->
     <section class="phone-demo">
         <div class="phone-demo-text">
             <div class="hero-tag">See it in action</div>
@@ -888,24 +876,14 @@
             </div>
             <div class="scenario-indicator" id="scenarioIndicator"></div>
         </div>
-    </section>
-
-    <!-- HERO -->
-    <section class="re-hero">
-        <div class="re-hero-text">
-            <div class="hero-tag">For real estate agents</div>
-            <h1>The agents who move first <em>win first.</em></h1>
-            <p>Your AI employee handles the follow-ups, the marketing, the admin, and the client communication — while you focus on showings, negotiations, and closing deals. This is what having an unfair advantage feels like.</p>
+        <div class="phone-demo-cta">
             <p style="color: var(--color-text-muted); max-width: 480px; margin-bottom: 1.5rem;">Text Ava now to put her to the test. Tell her you're interested in buying a home and watch how she qualifies you, gathers your details, and books a consultation. This is what your leads would experience, 24/7.</p>
-            <div style="display: flex; flex-direction: column; align-items: center; max-width: 480px;">
+            <div style="display: flex; flex-direction: column; max-width: 480px;">
                 <a href="sms:+12085651678" class="hero-cta">Text Ava — try a live demo</a>
                 <a href="sms:+12085651678" style="font-size: 0.85rem; color: var(--color-text-muted); text-decoration: none; margin-top: 0.4rem; letter-spacing: 0.03em;">(208) 565-1678</a>
                 <p style="font-size: 0.7rem; color: var(--color-text-muted); max-width: 420px; margin: 0.75rem auto 0; line-height: 1.5; opacity: 0.75;">By texting (208) 565-1678, you consent to receive SMS messages from Full Plate AI, including demo conversations and follow-up messages. Message frequency may vary. Standard message and data rates may apply. Reply STOP to opt out at any time. Reply HELP for help. Consent is not a condition of purchase. Your mobile information will not be sold or shared with third parties for promotional or marketing purposes.</p>
                 <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 0.75rem;">Or <a href="https://cal.com/fullplateai/30min" target="_blank" style="color: var(--color-accent); text-decoration: underline;">book a 15-minute call</a> to get your questions answered.</p>
             </div>
-        </div>
-        <div class="re-hero-photo">
-            <img src="images/boise-state-capital-building.jpg" alt="Boise State Capitol building in the Treasure Valley">
         </div>
     </section>
 
