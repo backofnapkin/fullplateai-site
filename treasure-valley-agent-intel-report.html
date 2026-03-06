@@ -1466,6 +1466,79 @@ body {
     margin: 0 auto 1rem;
   }
 }
+
+/* ── AGENT QUOTE ── */
+.agent-quote {
+  background: linear-gradient(135deg, rgba(45,90,61,0.05), rgba(45,90,61,0.02));
+  border-left: 4px solid var(--green);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: 32px 36px;
+  margin: 24px 0;
+  position: relative;
+}
+
+.agent-quote::before {
+  content: '\201C';
+  font-family: 'Fraunces', serif;
+  font-size: 64px;
+  color: var(--green);
+  opacity: 0.25;
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  line-height: 1;
+}
+
+.agent-quote blockquote {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.8;
+  font-style: italic;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.agent-quote-attribution {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding-left: 24px;
+}
+
+.agent-quote-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+}
+
+.agent-quote-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.agent-quote-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .agent-quote { padding: 24px 20px; }
+  .agent-quote::before { font-size: 48px; top: 4px; left: 12px; }
+  .agent-quote blockquote { padding-left: 16px; }
+  .agent-quote-attribution { padding-left: 16px; }
+}
+
 </style>
 </head>
 
@@ -1910,6 +1983,18 @@ body {
               <div class="breakdown-icon">📊</div>
               <div><strong>Consistency:</strong> Ranked #1 overall and #2 for sellers on FastExpert's Boise page. Traits flagged by reviewers: Responsive, Professional, Communicative, Knowledgeable. Her consistency across traits is what separates her from flash-in-the-pan producers.</div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sheila Smith Quote -->
+      <div class="agent-quote">
+        <blockquote>The best marketing you can do is to interact as much as possible with leads, customers, current and past clients. Never miss an opportunity to be present for them — make a lasting, positive impression.<br><br>If you are frustrated when a buyer wants to see houses for a year, you are looking at it all wrong. They will be your biggest marketing tool — you will be front and center in their minds to recommend to others. Do the work. Interacting with potential buyers and sellers, whether they buy or not, is your best step toward a closed transaction, directly or indirectly.</blockquote>
+        <div class="agent-quote-attribution">
+          <div class="agent-quote-avatar">SS</div>
+          <div>
+            <div class="agent-quote-name">Sheila Smith</div>
+            <div class="agent-quote-title">RE/MAX Capital City · Boise, ID</div>
           </div>
         </div>
       </div>
