@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W572Z8M2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-L9W572Z8M2');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Employee ROI Calculator — Full Plate AI</title>
+    <meta name="description" content="Calculate the ROI of an AI employee for your real estate business. See projected savings, commission gains, and break-even timelines with interactive sliders.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <style>
+        :root {
+            --color-bg: #FAFAF8;
+            --color-surface: #FFFFFF;
+            --color-text: #1A1A1A;
+            --color-text-muted: #6B6B6B;
+            --color-accent: #2D5A3D;
+            --color-accent-light: #E8F0EB;
+            --color-accent-hover: #1E3F2B;
+            --color-border: #E8E8E4;
+            --color-warm: #F5F0E8;
+            --font-display: 'Fraunces', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --color-gold: #B8860B;
+            --color-red: #C0392B;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 110;
+            background: rgba(250, 250, 248, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0.75rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            flex-shrink: 0;
+        }
+
+        .nav-logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+        }
+
+        .nav-link {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+            padding: 0.25rem 0;
+        }
+
+        .nav-link:hover {
+            color: var(--color-text);
+        }
+
+        .nav-link.active {
+            color: var(--color-accent);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--color-accent);
+            border-radius: 1px;
+        }
+
+        .nav-cta {
+            font-family: var(--font-body);
+            font-size: 0.825rem;
+            font-weight: 500;
+            color: var(--color-accent);
+            text-decoration: none;
+            padding: 0.45rem 1.15rem;
+            border: 1.5px solid var(--color-accent);
+            border-radius: 100px;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .nav-cta:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* HAMBURGER */
+        .nav-hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+            z-index: 110;
+        }
+
+        .nav-hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--color-text);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* MOBILE MENU */
+        .nav-mobile {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--color-bg);
+            z-index: 105;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1.75rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-mobile.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .nav-mobile a {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-mobile a:hover {
+            color: var(--color-accent);
+        }
+
+        .nav-mobile a.active {
+            color: var(--color-accent);
+        }
+
+        .nav-mobile .nav-mobile-cta {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background: var(--color-accent);
+            padding: 0.75rem 2rem;
+            border-radius: 100px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-mobile .nav-mobile-cta:hover {
+            background: var(--color-accent-hover);
+        }
+
+        /* PAGE HEADER */
+        .page-header {
+            padding: 7rem 2rem 2.5rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header p {
+            font-size: 1.05rem;
+            color: var(--color-text-muted);
+        }
+
+        /* CALCULATOR LAYOUT */
+        .calc-wrap {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+            display: grid;
+            grid-template-columns: 270px 1fr;
+            gap: 28px;
+        }
+
+        /* CONTROLS */
+        .controls { display: flex; flex-direction: column; gap: 16px; }
+
+        .ctrl-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 18px 20px;
+            position: relative;
+        }
+
+        .ctrl-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .ctrl-val {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        .ctrl-val.cost { color: var(--color-red); }
+        .ctrl-val.gain { color: var(--color-accent); }
+        .ctrl-val.save { color: var(--color-gold); }
+        .ctrl-val.years { color: var(--color-text); }
+
+        input[type="range"] {
+            width: 100%;
+            appearance: none;
+            height: 4px;
+            background: var(--color-border);
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        input[type="range"].cost-sl::-webkit-slider-thumb { background: var(--color-red); }
+        input[type="range"].gain-sl::-webkit-slider-thumb { background: var(--color-accent); }
+        input[type="range"].save-sl::-webkit-slider-thumb { background: var(--color-gold); }
+        input[type="range"].yrs-sl::-webkit-slider-thumb { background: var(--color-text); }
+
+        input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+        .ctrl-hint {
+            font-size: 0.75rem;
+            color: var(--color-text-muted);
+            margin-top: 8px;
+        }
+
+        /* RIGHT PANEL */
+        .right { display: flex; flex-direction: column; gap: 20px; }
+
+        /* VERDICT BANNER */
+        .verdict {
+            background: var(--color-text);
+            color: var(--color-bg);
+            border-radius: 10px;
+            padding: 22px 26px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .verdict-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #9a9a9a;
+            margin-bottom: 4px;
+            font-weight: 500;
+        }
+
+        .verdict-num {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #6ef09a;
+            line-height: 1;
+        }
+
+        .verdict-num.red { color: #f07070; }
+
+        .verdict-sub {
+            font-size: 0.7rem;
+            color: #8a8a8a;
+            margin-top: 4px;
+        }
+
+        /* METRICS ROW */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .metric {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 16px;
+            position: relative;
+        }
+
+        .metric-accent {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .metric-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-muted);
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .metric-val {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        .green { color: var(--color-accent); font-weight: 500; }
+        .red-t { color: var(--color-red); }
+        .gold-t { color: var(--color-gold); }
+
+        /* CHART */
+        .chart-wrap {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 20px;
+            height: 300px;
+            position: relative;
+        }
+
+        /* BREAKDOWN TABLE */
+        .breakdown {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .breakdown-head {
+            background: var(--color-text);
+            color: var(--color-bg);
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 0;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .breakdown-head div, .breakdown-row div {
+            padding: 10px 14px;
+            border-right: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .breakdown-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            font-size: 0.8rem;
+            border-bottom: 1px solid var(--color-border);
+            transition: background 0.15s ease;
+        }
+
+        .breakdown-row:hover { background: var(--color-accent-light); }
+        .breakdown-row div { border-right: 1px solid var(--color-border); }
+        .breakdown-row div:last-child, .breakdown-head div:last-child { border-right: none; }
+
+        .cumulative {
+            color: var(--color-text-muted);
+            font-size: 0.7rem;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 2rem; text-align: center; font-size: 0.8rem;
+            color: var(--color-text-muted); border-top: 1px solid var(--color-border);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-cta { display: none; }
+            .nav-hamburger { display: flex; }
+
+            .calc-wrap {
+                grid-template-columns: 1fr;
+                padding: 0 1.25rem 3rem;
+            }
+
+            .metrics { grid-template-columns: 1fr; }
+
+            .verdict { flex-direction: column; gap: 20px; }
+
+            .breakdown-head, .breakdown-row {
+                grid-template-columns: 1.5fr 1fr 1fr 1fr;
+                font-size: 0.65rem;
+            }
+
+            .breakdown-head div, .breakdown-row div {
+                padding: 8px 8px;
+            }
+
+            footer > div {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem !important;
+                text-align: center;
+                max-width: 320px;
+                margin: 0 auto 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">Full Plate <span>AI</span></a>
+
+        <div class="nav-links">
+            <a href="skills.html" class="nav-link">Skills</a>
+            <a href="real-estate.html" class="nav-link">Real Estate</a>
+            <a href="onboarding.html" class="nav-link">Onboarding</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+            <a href="index.html#pricing" class="nav-link">Pricing</a>
+        </div>
+
+        <a href="/text-us.html" class="nav-cta">Text Ava</a>
+
+        <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav-mobile" id="mobileMenu">
+        <a href="index.html" onclick="closeMobileMenu()">Home</a>
+        <a href="skills.html" onclick="closeMobileMenu()">Skills</a>
+        <a href="real-estate.html" onclick="closeMobileMenu()">Real Estate</a>
+        <a href="onboarding.html" onclick="closeMobileMenu()">Onboarding</a>
+        <a href="about.html" onclick="closeMobileMenu()">About</a>
+        <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+        <a href="index.html#pricing" onclick="closeMobileMenu()">Pricing</a>
+        <a href="/text-us.html" class="nav-mobile-cta" onclick="closeMobileMenu()">Text Ava</a>
+    </div>
+
+    <div class="page-header">
+        <h1>AI Employee ROI Calculator</h1>
+        <p>Adjust the sliders to model how an AI employee impacts your bottom line — from commission gains to admin savings.</p>
+    </div>
+
+    <div class="calc-wrap">
+        <div class="controls">
+            <div class="ctrl-card">
+                <div class="ctrl-label">Annual Cost to Run AI</div>
+                <div class="ctrl-val cost" id="v-cost">$6,000</div>
+                <input type="range" class="cost-sl" id="sl-cost" min="1000" max="20000" step="500" value="6000">
+                <div class="ctrl-hint">API + platform fees + your time</div>
+            </div>
+
+            <div class="ctrl-card">
+                <div class="ctrl-label">Extra Commissions / Year</div>
+                <div class="ctrl-val gain" id="v-comm">$15,000</div>
+                <input type="range" class="gain-sl" id="sl-comm" min="0" max="100000" step="2500" value="15000">
+                <div class="ctrl-hint">New business AI captures for you</div>
+            </div>
+
+            <div class="ctrl-card">
+                <div class="ctrl-label">Admin Salary Replaced</div>
+                <div class="ctrl-val save" id="v-save">$65,000</div>
+                <input type="range" class="save-sl" id="sl-save" min="0" max="120000" step="2500" value="65000">
+                <div class="ctrl-hint">Human admin fully replaced</div>
+            </div>
+
+            <div class="ctrl-card">
+                <div class="ctrl-label">Projection Years</div>
+                <div class="ctrl-val years" id="v-yrs">5 yrs</div>
+                <input type="range" class="yrs-sl" id="sl-yrs" min="1" max="10" step="1" value="5">
+                <div class="ctrl-hint">How far out to model</div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="verdict">
+                <div>
+                    <div class="verdict-label">Year 1 Net Gain</div>
+                    <div class="verdict-num" id="v-yr1">—</div>
+                    <div class="verdict-sub">After AI cost deducted</div>
+                </div>
+                <div>
+                    <div class="verdict-label">ROI on AI Investment</div>
+                    <div class="verdict-num" id="v-roi">—</div>
+                    <div class="verdict-sub">Every $1 spent returns...</div>
+                </div>
+                <div>
+                    <div class="verdict-label">Break-Even</div>
+                    <div class="verdict-num" id="v-be">—</div>
+                    <div class="verdict-sub">Days until profitable</div>
+                </div>
+            </div>
+
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-accent" style="background: var(--color-accent)"></div>
+                    <div class="metric-label">Commission Gain</div>
+                    <div class="metric-val green" id="m-comm">—</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-accent" style="background: var(--color-gold)"></div>
+                    <div class="metric-label">Labor Saved</div>
+                    <div class="metric-val gold-t" id="m-save">—</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-accent" style="background: var(--color-red)"></div>
+                    <div class="metric-label">AI Cost</div>
+                    <div class="metric-val red-t" id="m-cost">—</div>
+                </div>
+            </div>
+
+            <div class="chart-wrap">
+                <canvas id="chart"></canvas>
+            </div>
+
+            <div class="breakdown">
+                <div class="breakdown-head">
+                    <div>Year</div>
+                    <div>Gross Benefit</div>
+                    <div>AI Cost</div>
+                    <div>Net Profit</div>
+                </div>
+                <div id="table-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem;">
+            <a href="/skills.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Skills</a>
+            <a href="/faq.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">FAQ</a>
+            <a href="/about.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">About</a>
+            <a href="/onboarding.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Onboarding</a>
+            <a href="/real-estate.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Real Estate</a>
+            <a href="/contact.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Contact</a>
+            <a href="/privacy.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Privacy Policy</a>
+            <a href="/terms.html" style="color: var(--color-text-muted); text-decoration: none; transition: color 0.3s ease;">Terms & Conditions</a>
+        </div>
+        &copy; 2026 Full Plate AI. Boise, Idaho.
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.nav-hamburger');
+            menu.classList.toggle('open');
+            hamburger.classList.toggle('open');
+            document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.nav-hamburger');
+            menu.classList.remove('open');
+            hamburger.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Calculator logic
+        const fmt = v => '$' + Math.abs(Math.round(v)).toLocaleString();
+        const fmtK = v => {
+            const a = Math.abs(v);
+            return (v < 0 ? '-' : '') + '$' + (a >= 1000 ? (a/1000).toFixed(0)+'K' : a);
+        };
+
+        let cost = 6000, comm = 15000, save = 65000, yrs = 5;
+
+        const ctx = document.getElementById('chart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [
+                    {
+                        label: 'Commissions',
+                        data: [],
+                        backgroundColor: '#2D5A3D',
+                        borderRadius: 4,
+                    },
+                    {
+                        label: 'Admin Savings',
+                        data: [],
+                        backgroundColor: '#B8860B',
+                        borderRadius: 4,
+                    },
+                    {
+                        label: 'AI Cost',
+                        data: [],
+                        backgroundColor: '#C0392B',
+                        borderRadius: 4,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#6B6B6B',
+                            font: { family: 'DM Sans', size: 11 },
+                            boxWidth: 14,
+                            padding: 14
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: '#1A1A1A',
+                        borderColor: '#3a3a3a',
+                        borderWidth: 1,
+                        titleColor: '#9a9a9a',
+                        bodyColor: '#FAFAF8',
+                        titleFont: { family: 'DM Sans', size: 11 },
+                        bodyFont: { family: 'DM Sans', size: 12 },
+                        callbacks: {
+                            label: ctx => ` ${ctx.dataset.label}: ${fmt(ctx.parsed.y)}`
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        stacked: false,
+                        ticks: { color: '#6B6B6B', font: { family: 'DM Sans', size: 11 } },
+                        grid: { color: '#E8E8E4' },
+                        border: { color: '#E8E8E4' }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#6B6B6B',
+                            font: { family: 'DM Sans', size: 11 },
+                            callback: v => fmtK(v)
+                        },
+                        grid: { color: '#E8E8E4' },
+                        border: { color: '#E8E8E4' }
+                    }
+                }
+            }
+        });
+
+        function update() {
+            const gross = comm + save;
+            const net = gross - cost;
+            const roi = ((net / cost) * 100).toFixed(0);
+            const breakEvenDays = Math.ceil((cost / gross) * 365);
+
+            // verdict
+            document.getElementById('v-yr1').textContent = fmt(net);
+            document.getElementById('v-yr1').className = 'verdict-num' + (net < 0 ? ' red' : '');
+            document.getElementById('v-roi').textContent = roi + '%';
+            document.getElementById('v-be').textContent = breakEvenDays + 'd';
+
+            // metrics
+            document.getElementById('m-comm').textContent = fmt(comm);
+            document.getElementById('m-save').textContent = fmt(save);
+            document.getElementById('m-cost').textContent = fmt(cost);
+
+            // chart
+            const labels = [], commArr = [], saveArr = [], costArr = [];
+            for (let y = 1; y <= yrs; y++) {
+                labels.push('Yr ' + y);
+                commArr.push(comm);
+                saveArr.push(save);
+                costArr.push(cost);
+            }
+            chart.data.labels = labels;
+            chart.data.datasets[0].data = commArr;
+            chart.data.datasets[1].data = saveArr;
+            chart.data.datasets[2].data = costArr;
+            chart.update('none');
+
+            // table
+            const tb = document.getElementById('table-body');
+            tb.innerHTML = '';
+            let cumNet = 0;
+            for (let y = 1; y <= yrs; y++) {
+                const yGross = gross;
+                const yCost = cost;
+                const yNet = yGross - yCost;
+                cumNet += yNet;
+                const row = document.createElement('div');
+                row.className = 'breakdown-row';
+                row.innerHTML = `
+                    <div>Year ${y} <span class="cumulative">cumulative: ${fmt(cumNet)}</span></div>
+                    <div class="green">${fmt(yGross)}</div>
+                    <div class="red-t">${fmt(yCost)}</div>
+                    <div class="${yNet >= 0 ? 'green' : 'red-t'}">${fmt(yNet)}</div>
+                `;
+                tb.appendChild(row);
+            }
+        }
+
+        // wire sliders
+        const bind = (id, key, valId) => {
+            document.getElementById(id).addEventListener('input', e => {
+                if (key === 'cost') cost = +e.target.value;
+                if (key === 'comm') comm = +e.target.value;
+                if (key === 'save') save = +e.target.value;
+                if (key === 'yrs') yrs = +e.target.value;
+                document.getElementById(valId).textContent =
+                    key === 'yrs' ? yrs + ' yrs' : '$' + (+e.target.value).toLocaleString();
+                update();
+            });
+        };
+
+        bind('sl-cost', 'cost', 'v-cost');
+        bind('sl-comm', 'comm', 'v-comm');
+        bind('sl-save', 'save', 'v-save');
+        bind('sl-yrs',  'yrs',  'v-yrs');
+
+        update();
+    </script>
+</body>
+</html>
